@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/ZTMowrer947/ProjectPortfolio/issues"
   },
-  "homepage": "https://github.com/ZTMowrer947/ProjectPortfolio#readme"
+  "homepage": "https://github.com/ZTMowrer947/ProjectPortfolio#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  }
 }
