@@ -1,0 +1,84 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "project_name": "Random Quote Generator",
+            "description": "This project is a random quote generator, where each time the central button is clicked or 30 seconds pass without clicking the button (whichever comes first), the background changes and a new random quote is loaded. Currently, this only operates on a fixed array of quote objects, but could easily be expanded to use a database or API.",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "live_link": "https://ztmowrer947.github.io/RandomQuoteGenerator",
+            "github_link": "https://github.com/ZTMowrer947/RandomQuoteGenerator",
+            "image_urls": {
+                "landing": "public/images/projects/1/landing.png",
+                "gallery": [
+                    "public/images/projects/1/gallery1.png",
+                    "public/images/projects/1/gallery2.png",
+                    "public/images/projects/1/gallery3.png"
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "project_name": "Student List Paginator",
+            "description": "This project is concerned with paginating a list of students into a set of 10 students per page (by default). Additionally, students can be searched for by their name and results can be sorted by name or join data in ascending or descending order. Lastly, results can be paginated into varying amounts of students per page. All of these features are added unobtrusively, such that the enitire list of students is displayed when JavaScript is disabled.",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "live_link": "https://ztmowrer947.github.io/StudentListPaginator",
+            "github_link": "https://github.com/ZTMowrer947/StudentListPaginator",
+            "image_urls": {
+                "landing": "public/images/projects/2/landing.png",
+                "gallery": [
+                    "public/images/projects/2/gallery1.png",
+                    "public/images/projects/2/gallery2.png",
+                    "public/images/projects/2/gallery3.png"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "project_name": "Interactive Registration Form",
+            "description": "This project involves the unobtrusive addition of validation to a registration form for a made-up conference, Full Stack Conf. When JavaScript is disabled, the form still functions normally.",
+            "technologies": ["HTML", "CSS", "JavaScript", "jQuery"],
+            "live_link": "https://ztmowrer947.github.io/InteractiveRegistrationForm",
+            "github_link": "https://github.com/ZTMowrer947/InteractiveRegistrationForm",
+            "image_urls": {
+                "landing": "public/images/projects/3/landing.png",
+                "gallery": [
+                    "public/images/projects/3/gallery1.png",
+                    "public/images/projects/3/gallery2.png",
+                    "public/images/projects/3/gallery3.png"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "project_name": "Phrase Hunter",
+            "description": "This project is a simple web-based game similar to that of Hangman in concept. The user must guess a phrase by guessing letters individually, and they must reveal all letters in the phrase before running out of lives. This project is designed to take advantage of object-oriented programming features present in the ECMAScript 2015 standard of JavaScript.",
+            "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "OOP"],
+            "live_link": "https://ztmowrer947.github.io/PhraseHunter",
+            "github_link": "https://github.com/ZTMowrer947/PhraseHunter",
+            "image_urls": {
+                "landing": "public/images/projects/4/landing.png",
+                "gallery": [
+                    "public/images/projects/4/gallery1.png",
+                    "public/images/projects/4/gallery2.png",
+                    "public/images/projects/4/gallery3.png"
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "project_name": "Awesome Startup Employee Directory",
+            "description": "This project takes advantage of the Random User API to display a set of 12 employees in a directory format. When the employee data is clicked, a modal appears providing more information about that employee, and modal navigation is present to easily switch between employees. Additionally, the user can search for employees by their name and sort their results by first or last name in ascending or descending order.",
+            "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Random User API"],
+            "live_link": "https://ztmowrer947.github.io/AwesomeStartupEmployeeDirectory",
+            "github_link": "https://github.com/ZTMowrer947/AwesomeStartupEmployeeDirectory",
+            "image_urls": {
+                "landing": "public/images/projects/5/landing.png",
+                "gallery": [
+                    "public/images/projects/5/gallery1.png",
+                    "public/images/projects/5/gallery2.png",
+                    "public/images/projects/5/gallery3.png"
+                ]
+            }
+        }
+    ]
+}
