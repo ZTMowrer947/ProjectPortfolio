@@ -4,7 +4,7 @@
   "description": "Treehouse FSJS Techdegree Unit 6 Project",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "nodemon -w routes -w data.json -w *.js  ."
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
   }
 }
