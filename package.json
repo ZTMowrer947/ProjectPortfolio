@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Treehouse FSJS Techdegree Unit 6 Project",
   "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZTMowrer947/ProjectPortfolio.git"
