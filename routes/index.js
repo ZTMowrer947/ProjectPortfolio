@@ -5,6 +5,7 @@
 // Imports
 const express = require("express");
 const { projects } = require("../data.json");
+const projectsRouter = require("./projects");
 
 // Router setup
 const router = express.Router();
@@ -17,6 +18,8 @@ router.get("/", (req, res) => { // GET /
     // Render view
     res.render("index");
 });
+
+router.use("/projects", projectsRouter);
 
 // Export
 module.exports = router;
