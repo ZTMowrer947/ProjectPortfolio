@@ -11,12 +11,17 @@ const projectsRouter = require("./projects");
 const router = express.Router();
 
 // Route setup
-router.get("/", (req, res) => { // GET /
+router.get("/", (req, res) => {         // GET /
     // Set locals for view
     res.locals.projects = projects;
 
-    // Render view
+    // Render index view
     res.render("index");
+});
+
+router.get("/about", (req, res) => {    // GET /about
+    // Render about view
+    res.render("about");
 });
 
 router.use("/projects", projectsRouter);
