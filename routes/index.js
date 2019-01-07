@@ -29,7 +29,7 @@ router.use("/projects", projectsRouter);
 // All other routes are a 404
 router.get("*", (req, res, next) => {
     // Create 404 error
-    const error = new Error(`${req.path} currently does not exist.`);
+    const error = new Error(`Route ${req.path} currently does not exist.`);
 
     // Set status
     error.status = 404;
