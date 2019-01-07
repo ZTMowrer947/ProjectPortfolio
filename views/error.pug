@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    - let isDevelopment = env === "development";
+
+    .error
+        h1 Sorry, an error has occurred.
+        h2= error.status
+        h3= error.message
+
+        if isDevelopment
+            .stack-message
+                pre= error.stack
