@@ -6,6 +6,7 @@
 const express = require("express");
 const path = require("path");
 const routes = require("./routes");
+const errorHandler = require("./middleware/error");
 
 // Paths
 const viewPath = path.join(__dirname, "views");         // Path to views
@@ -21,6 +22,8 @@ app.set("views", viewPath);     // Set absolute path to view templates
 // Middleware
 app.use("/static", express.static(staticAssetPath));    // Setup route to static assets
 app.use(routes);                                        // Setup application routes
+
+app.use(errorHandler);                                  // Handle errors
 
 // Export
 module.exports = app;
