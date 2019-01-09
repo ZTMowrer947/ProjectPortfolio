@@ -24,7 +24,8 @@
   "homepage": "https://github.com/ZTMowrer947/ProjectPortfolio#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
