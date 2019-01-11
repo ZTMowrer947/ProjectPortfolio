@@ -8,11 +8,11 @@
             "live_link": "https://ztmowrer947.github.io/RandomQuoteGenerator",
             "github_link": "https://github.com/ZTMowrer947/RandomQuoteGenerator",
             "image_urls": {
-                "landing": "/static/images/projects/1/landing.png",
+                "landing": "/static/images/projects/1/landing.PNG",
                 "gallery": [
-                    "/static/images/projects/1/gallery1.png",
-                    "/static/images/projects/1/gallery2.png",
-                    "/static/images/projects/1/gallery3.png"
+                    "/static/images/projects/1/gallery1.PNG",
+                    "/static/images/projects/1/gallery2.PNG",
+                    "/static/images/projects/1/gallery3.PNG"
                 ]
             }
         },
@@ -24,11 +24,11 @@
             "live_link": "https://ztmowrer947.github.io/StudentListPaginator",
             "github_link": "https://github.com/ZTMowrer947/StudentListPaginator",
             "image_urls": {
-                "landing": "/static/images/projects/2/landing.png",
+                "landing": "/static/images/projects/2/landing.PNG",
                 "gallery": [
-                    "/static/images/projects/2/gallery1.png",
-                    "/static/images/projects/2/gallery2.png",
-                    "/static/images/projects/2/gallery3.png"
+                    "/static/images/projects/2/gallery1.PNG",
+                    "/static/images/projects/2/gallery2.PNG",
+                    "/static/images/projects/2/gallery3.PNG"
                 ]
             }
         },
@@ -40,11 +40,11 @@
             "live_link": "https://ztmowrer947.github.io/InteractiveRegistrationForm",
             "github_link": "https://github.com/ZTMowrer947/InteractiveRegistrationForm",
             "image_urls": {
-                "landing": "/static/images/projects/3/landing.png",
+                "landing": "/static/images/projects/3/landing.PNG",
                 "gallery": [
-                    "/static/images/projects/3/gallery1.png",
-                    "/static/images/projects/3/gallery2.png",
-                    "/static/images/projects/3/gallery3.png"
+                    "/static/images/projects/3/gallery1.PNG",
+                    "/static/images/projects/3/gallery2.PNG",
+                    "/static/images/projects/3/gallery3.PNG"
                 ]
             }
         },
@@ -56,11 +56,11 @@
             "live_link": "https://ztmowrer947.github.io/PhraseHunter",
             "github_link": "https://github.com/ZTMowrer947/PhraseHunter",
             "image_urls": {
-                "landing": "/static/images/projects/4/landing.png",
+                "landing": "/static/images/projects/4/landing.PNG",
                 "gallery": [
-                    "/static/images/projects/4/gallery1.png",
-                    "/static/images/projects/4/gallery2.png",
-                    "/static/images/projects/4/gallery3.png"
+                    "/static/images/projects/4/gallery1.PNG",
+                    "/static/images/projects/4/gallery2.PNG",
+                    "/static/images/projects/4/gallery3.PNG"
                 ]
             }
         },
@@ -72,11 +72,11 @@
             "live_link": "https://ztmowrer947.github.io/AwesomeStartupEmployeeDirectory",
             "github_link": "https://github.com/ZTMowrer947/AwesomeStartupEmployeeDirectory",
             "image_urls": {
-                "landing": "/static/images/projects/5/landing.png",
+                "landing": "/static/images/projects/5/landing.PNG",
                 "gallery": [
-                    "/static/images/projects/5/gallery1.png",
-                    "/static/images/projects/5/gallery2.png",
-                    "/static/images/projects/5/gallery3.png"
+                    "/static/images/projects/5/gallery1.PNG",
+                    "/static/images/projects/5/gallery2.PNG",
+                    "/static/images/projects/5/gallery3.PNG"
                 ]
             }
         }
