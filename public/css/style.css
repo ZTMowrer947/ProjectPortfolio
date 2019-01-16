@@ -170,3 +170,7 @@ a:hover{
 #my-info {
   background: firebrick;
 }
+
+.logo {
+  border: 1px solid white;
+}
