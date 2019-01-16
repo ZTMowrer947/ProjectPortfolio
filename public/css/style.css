@@ -1,4 +1,8 @@
 
+h1, h2 {
+  text-shadow: 3px 3px #888;
+}
+
 h1,h2,h3,h4,h5,p{
   font-family: 'Merriweather', serif;
 }
@@ -20,6 +24,7 @@ h1,h2,h3,h4,h5,p{
   p{
     font-size: 15px;
     color: #666;
+    text-shadow: 1px 1px #555;
   }
 
 .round{
@@ -65,13 +70,13 @@ a:hover{
 
   .portfolio-me p{
     font-size: 14px;
-    color: #999;
+    color: #CCC;
   }
 
   .portfolio-me a{
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 600;
-    color: #555;
+    color: #999;
     font-size: 13px;
     letter-spacing: 2.5px;
     -webkit-text-transform: uppercase;
@@ -156,4 +161,12 @@ a:hover{
 
 .error h2, .error h3 {
   text-align: center;
+}
+
+.title-bar {
+  background: firebrick;
+}
+
+#my-info {
+  background: firebrick;
 }
