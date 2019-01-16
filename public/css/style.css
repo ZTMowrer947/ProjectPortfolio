@@ -174,3 +174,11 @@ a:hover{
 .logo {
   border: 1px solid white;
 }
+
+.title-bar .menu-icon {
+  margin-right: 0.5rem;
+}
+
+.title-bar-title {
+  padding-left: 0.5rem;
+}
