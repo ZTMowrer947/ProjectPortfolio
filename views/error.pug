@@ -1,6 +1,7 @@
 extends layout
 
 block content
+    //- Determine if we are in development
     - let isDevelopment = env === "development";
 
     .error
@@ -8,6 +9,7 @@ block content
         h2= error.status
         h3= error.message
 
+        //- Also display stack message if in development
         if isDevelopment
             .stack-message
                 pre= error.stack

@@ -5,6 +5,8 @@ html(class="no-js" lang="en" dir="ltr")
     meta(http-equiv='x-ua-compatible', content='ie=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title Portfolio Site
+
+    //- Stylesheets
     link(href='https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,800', rel='stylesheet')
     link(rel='stylesheet', href='/static/css/foundation.css')
     link(rel='stylesheet', href='/static/css/style.css')
@@ -16,9 +18,11 @@ html(class="no-js" lang="en" dir="ltr")
           .cell.shrink
             img.thumbnail(src='/static/images/profile.jpg')
           .cell.auto
+            //- Logo and name
             img.logo(src="/static/images/logo.png", alt="Logo")
             h5 Zack Mowrer
 
+            //- Basic background info
             p.text-light
               | I am a Full Stack JavaScript developer based in Charleston, West Virginia.
               | A top member of the West Virgnia Coding Club since its inception in 2016, I have nearly 2 years of extensive experience of JavaScript on both the frontend and the backend.
@@ -34,7 +38,7 @@ html(class="no-js" lang="en" dir="ltr")
       block content
         
 
-      
+  //- Scripts    
   script(src='/static/js/vendor/jquery.js')
   script(src='/static/js/vendor/what-input.js')
   script(src='/static/js/vendor/foundation.js')
