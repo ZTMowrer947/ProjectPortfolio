@@ -50,3 +50,30 @@ This project is concerned with creating a portfolio to show off the five previou
 
 #### Layout, CSS, and styles
 - Final project's layout and positioning matches the mockups and HTML files.
+
+### Requirements being exceeded
+#### App initialization and dependencies
+- Running `npm start` serves the app.
+
+#### Templates
+- An `error` Pug template is present.
+
+#### Errors
+- when the app is directed to a non-existent route, the app displays a user friendly error in the browser, including the following:
+    - `error.message`
+    - `error.status`
+    - `error.stack`
+        - Note: The stack message only appears when the app is running in development mode (when the NODE_ENV environment variable is not present or set to "development")
+
+#### Layout, CSS, and styles
+- The following items have been customized:
+    - background color (sidebar and mobile navbar are now firebrick red)
+    - color (to supplement the background color change, text is lighter in sidebar and navbar)
+    - text shadow (Main page headers now have a gray shadow)
+    - added logo (present in sidebar and navbar)
+
+### Other things of note
+- A favicon has been added for browser tabs and bookmarks.
+- The `data.json` file is structured slightly differently for the image URLs than stated in the requirements, but it still generally conforms to it. Specifically, the `image_urls` property on each project is an object with the following keys:
+    - `landing`: path to landing image
+    - `gallery`: array of paths for gallery images
