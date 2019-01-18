@@ -182,3 +182,8 @@ a:hover{
 .title-bar-title {
   padding-left: 0.5rem;
 }
+
+p.disclaimer {
+  text-shadow: none;
+  font-size: 10px;
+}
