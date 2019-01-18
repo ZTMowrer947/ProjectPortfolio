@@ -30,6 +30,9 @@ module.exports = (error, req, res, next) => {
     // Get status message for status code
     const statusMessage = STATUS_CODES[error.status];
 
+    // New line for spacing
+    console.log();
+
     // Log error to console
     console.error(`Error ${error.status} ${statusMessage} at ${req.path}: ${error.message}`);
 
@@ -37,6 +40,8 @@ module.exports = (error, req, res, next) => {
     if (env === "development") {
         // Also print out the stack trace
         console.error(`Stack Trace: ${error.stack}`);
+        // New line for spacing
+        console.log();
     }
 
     // Render error view
