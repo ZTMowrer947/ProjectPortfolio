@@ -11,7 +11,12 @@ git clone https://github.com/ZTMowrer947/ProjectPortfolio
 cd ProjectPortfolio
 npm start
 ```
-It's as easy as 1,2,3!
+
+This will run the app in development mode, and upon changing code in the backend, the app will automatically restart to apply the changes.
+
+The app can also be run in production mode, where the app doesn't restart on changes and the stack traces of errors are hidden (for security reasons).
+
+Running the app in production mode is done by following the above instructions, but replacing `npm start` with `npm run start:production`.
 
 ## Technologies used
 - [Node.js backend](https://nodejs.org)
