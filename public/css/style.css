@@ -179,9 +179,16 @@ a:hover{
   margin-right: 0.5rem;
 }
 
+.title-bar-left a {
+  color: white;
+}
+
+.title-bar-left a:hover {
+  color: #AAA;
+}
+
 .title-bar-title {
   padding-left: 0.5rem;
-  color: white;
 }
 
 p.disclaimer {
