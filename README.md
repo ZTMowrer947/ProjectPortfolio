@@ -18,6 +18,8 @@ The app can also be run in production mode, where the app doesn't restart on cha
 
 Running the app in production mode is done by following the above instructions, but replacing `npm start` with `npm run start:production`.
 
+Once you have the app running, it will tell you on which port it is running on. Simply go to `localhost:<port>` in your browser, replacing `<port>` with the provided port number.
+
 ## Technologies used
 - [Node.js backend](https://nodejs.org)
 - [Pug view engine](https://pugjs.org)
