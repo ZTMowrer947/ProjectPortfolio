@@ -33,8 +33,10 @@ html(class="no-js" lang="en" dir="ltr")
       .title-bar.hide-for-large
         .title-bar-left
           button.menu-icon(type='button', data-toggle='my-info')
-          img.logo(src="/static/images/logo.png", alt="Logo")
-          span.title-bar-title Zack Mowrer
+          //- Link to home pagea
+          a(href="/")
+            img.logo(src="/static/images/logo.png", alt="Logo")
+            span.title-bar-title Zack Mowrer
       block content
         
 
