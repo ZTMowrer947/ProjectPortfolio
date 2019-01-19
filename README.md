@@ -29,7 +29,6 @@ Running the app in production mode is done by following the above instructions, 
 - The node_modules folder is not included in the repo, as it is present in the .gitignore file.
 - Running `npm install` downloads all dependencies for the app.
 - Running `node .` serves the app.
-    - The requirements state that the app should be served through `app.js`, but this helps seperate the serving portion of the app from the setup portion.
 
 #### Project Data
 - The `data.json` file is present.
@@ -62,7 +61,7 @@ Running the app in production mode is done by following the above instructions, 
     - project descriptions
     - project images
     - links
-- The starter comments have been removed from the templates
+- The starter comments have been removed from the templates.
 
 #### Errors
 - App logs out user friendly error messages when the app is pointed to non-existent routes.
@@ -82,7 +81,7 @@ Running the app in production mode is done by following the above instructions, 
     - `error.message`
     - `error.status`
     - `error.stack`
-        - Note: The stack message only appears when the app is running in development mode (when the NODE_ENV environment variable is not present or set to "development")
+        - Note: The stack message only appears when the app is running in development mode.
 
 #### Layout, CSS, and styles
 - The following items have been customized:
@@ -93,6 +92,3 @@ Running the app in production mode is done by following the above instructions, 
 
 ### Other things of note
 - A favicon has been added for browser tabs and bookmarks.
-- The `data.json` file is structured slightly differently for the image URLs than stated in the requirements, but it still generally conforms to it. Specifically, the `image_urls` property on each project is an object with the following keys:
-    - `landing`: path to landing image
-    - `gallery`: array of paths for gallery images
