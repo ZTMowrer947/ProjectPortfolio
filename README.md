@@ -4,6 +4,20 @@ Treehouse FSJS Techdegree Unit 6 Project
 ## Project Description
 This project is concerned with creating a portfolio to show off the five previous projects of the Techdegree.
 
+## Downloading and Running
+Clone the repository and run npm's start script in the resulting directory.
+```
+git clone https://github.com/ZTMowrer947/ProjectPortfolio
+cd ProjectPortfolio
+npm start
+```
+It's as easy as 1,2,3!
+
+## Technologies used
+- [Node.js backend](https://nodejs.org)
+- [Pug view engine](https://pugjs.org)
+- [Express web framework](https://expressjs.com)
+
 ## Project Criteria
 ### Requirements being met
 #### App initialization and dependencies
