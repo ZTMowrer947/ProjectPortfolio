@@ -30,7 +30,7 @@ Once you have the app running, it will tell you on which port it is running on. 
 #### App initialization and dependencies
 - The node_modules folder is not included in the repo, as it is present in the .gitignore file.
 - Running `npm install` downloads all dependencies for the app.
-- Running `node .` serves the app.
+- Running `node app.js` serves the app.
 
 #### Project Data
 - The `data.json` file is present.
