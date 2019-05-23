@@ -4,8 +4,8 @@
   "description": "Treehouse FSJS Techdegree Unit 6 Project",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon -w routes -w data.json -w middleware -w *.js app.js",
-    "start:production": "cross-env NODE_ENV=production node app.js"
+    "start:dev": "nodemon -w routes -w data.json -w middleware -w *.js app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
