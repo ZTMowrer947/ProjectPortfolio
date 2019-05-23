@@ -79,6 +79,36 @@
                     "/static/images/projects/5/gallery3.PNG"
                 ]
             }
+        },
+        {
+            "id": 6,
+            "project_name": "Flickr Image Gallery",
+            "description": "This project utilizes React and the Flickr API to provide an easy-to-use photo gallery. Three default tags are provided and loaded on page load, and a search form is placed directly above it to search for other tags.",
+            "technologies": ["React", "React Router", "Flickr API", "material-ui"],
+            "github_link": "https://github.com/ZTMowrer947/FlickrImageGallery",
+            "image_urls": {
+                "landing": "/static/images/projects/6/landing.PNG",
+                "gallery": [
+                    "/static/images/projects/6/gallery1.PNG",
+                    "/static/images/projects/6/gallery2.PNG",
+                    "/static/images/projects/6/gallery3.PNG"
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "project_name": "Library Manager",
+            "description": "This project uses the Sequelize ORM and the Express framework to provide a library manager for a book database. Books can be retrieved, created, updated, and delete. Additionally, books can be sorted by various properties (in ascending or descending order). Forms are validated on both the server-side and client-side",
+            "technologies": ["Express", "Pug", "SQLite", "Sequelize"],
+            "github_link": "https://github.com/ZTMowrer947/LibraryManager",
+            "image_urls": {
+                "landing": "/static/images/projects/7/landing.PNG",
+                "gallery": [
+                    "/static/images/projects/7/gallery1.PNG",
+                    "/static/images/projects/7/gallery2.PNG",
+                    "/static/images/projects/7/gallery3.PNG"
+                ]
+            }
         }
     ]
 }
