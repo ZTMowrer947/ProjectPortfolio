@@ -12,11 +12,11 @@ cd ProjectPortfolio
 npm start
 ```
 
-This will run the app in development mode, and upon changing code in the backend, the app will automatically restart to apply the changes.
+This will run the app in production mode, where the app doesn't restart on changes and the stack traces of errors are hidden (for security reasons).
 
-The app can also be run in production mode, where the app doesn't restart on changes and the stack traces of errors are hidden (for security reasons).
+This app app can also be run in development mode, and upon changing code in the backend, the app will automatically restart to apply the changes.
 
-Running the app in production mode is done by following the above instructions, but replacing `npm start` with `npm run start:production`.
+Running the app in development mode is done by following the above instructions, but replacing `npm start` with `npm run start:dev`.
 
 Once you have the app running, it will tell you on which port it is running on. Simply go to `localhost:<port>` in your browser, replacing `<port>` with the provided port number.
 
