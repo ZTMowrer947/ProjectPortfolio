@@ -29,7 +29,7 @@ app.use(routes);                                        // Setup application rou
 app.use(errorHandler);                                  // Handle errors
 
 // Express HTTP server configuration
-const port = 3000;
+const port = parseInt(process.env.PORT) || 3000;
 
 // Express HTTP server setup
 app.listen(port, () => {
