@@ -98,7 +98,7 @@
         {
             "id": 7,
             "project_name": "Library Manager",
-            "description": "This project uses the Sequelize ORM and the Express framework to provide a library manager for a book database. Books can be retrieved, created, updated, and delete. Additionally, books can be sorted by various properties (in ascending or descending order). Forms are validated on both the server-side and client-side",
+            "description": "This project uses the Sequelize ORM and the Express framework to provide a library manager for a book database. Books can be retrieved, created, updated, and delete. Additionally, books can be searched for and sorted by various properties (in ascending or descending order). Forms are validated on both the server-side and client-side.",
             "technologies": ["Express", "Pug", "SQLite", "Sequelize"],
             "github_link": "https://github.com/ZTMowrer947/LibraryManager",
             "image_urls": {
