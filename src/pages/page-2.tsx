@@ -1,9 +1,11 @@
+// Imports
 import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
+// Page
 const SecondPage = () => (
     <Layout>
         <SEO title="Page two" />
@@ -13,4 +15,5 @@ const SecondPage = () => (
     </Layout>
 );
 
+// Export
 export default SecondPage;
