@@ -32,8 +32,10 @@ const Layout: React.FC = ({ children }) => {
         <>
             <Header siteTitle={data.site.siteMetadata.title} />
             <Container fluid>
-                <main>{children}</main>
-                <footer>
+                <main className="d-flex flex-column align-items-center">
+                    {children}
+                </main>
+                <footer className="mt-3 text-center">
                     © {new Date().getFullYear()}, Built with
                     {` `}
                     <a href="https://www.gatsbyjs.org">Gatsby</a>
