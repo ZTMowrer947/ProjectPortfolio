@@ -1,0 +1,14 @@
+// Bootstrap setup
+$theme-colors: (
+    'primary': firebrick,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+// Maximize page height
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+    height: 100%;
+}
