@@ -1,96 +1,99 @@
-# ProjectPortfolio
-Treehouse FSJS Techdegree Unit 6 Project
+<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+<p align="center">
+  <a href="https://www.gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby's default starter
+</h1>
 
-## Project Description
-This project is concerned with creating a portfolio to show off the five previous projects of the Techdegree.
+Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-## Downloading and Running
-Clone the repository and run npm's start script in the resulting directory.
-```
-git clone https://github.com/ZTMowrer947/ProjectPortfolio
-cd ProjectPortfolio
-npm start
-```
+_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
-This will run the app in production mode, where the app doesn't restart on changes and the stack traces of errors are hidden (for security reasons).
+## 🚀 Quick start
 
-This app app can also be run in development mode, and upon changing code in the backend, the app will automatically restart to apply the changes.
+1.  **Create a Gatsby site.**
 
-Running the app in development mode is done by following the above instructions, but replacing `npm start` with `npm run start:dev`.
+    Use the Gatsby CLI to create a new site, specifying the default starter.
 
-Once you have the app running, it will tell you on which port it is running on. Simply go to `localhost:<port>` in your browser, replacing `<port>` with the provided port number.
+    ```shell
+    # create a new Gatsby site using the default starter
+    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    ```
 
-## Technologies used
-- [Node.js backend](https://nodejs.org)
-- [Pug view engine](https://pugjs.org)
-- [Express web framework](https://expressjs.com)
+1.  **Start developing.**
 
-## Project Criteria
-### Requirements being met
-#### App initialization and dependencies
-- The node_modules folder is not included in the repo, as it is present in the .gitignore file.
-- Running `npm install` downloads all dependencies for the app.
-- Running `node app.js` serves the app.
+    Navigate into your new site’s directory and start it up.
 
-#### Project Data
-- The `data.json` file is present.
-- The `data.json` file a `projects` properties set to an array of five objects, each containing the following properties:
-    - `id`
-    - `project_name`
-    - `description`
-    - `live_link`
-    - `github_link`
-    - `image_urls`
+    ```shell
+    cd my-default-starter/
+    gatsby develop
+    ```
 
-#### Routes
-- The following routers render the appropriate pages:
-    - `/` - Home page
-    - `/about` - About page
-    - `/projects` route, includes an `id` parameter
-- There is a `static` route to serve static assets from the `public` folder.
+1.  **Open the source code and start editing!**
 
-#### Templates
-- The following Pug templates are present:
-    - `layout`
-    - `index`
-    - `about`
-    - `project`
+    Your site is now running at `http://localhost:8000`!
 
-- Templates have all the required information as exemplified in the provided HTML and mockup files:
-    - name
-    - titles
-    - descriptions
-    - project descriptions
-    - project images
-    - links
-- The starter comments have been removed from the templates.
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-#### Errors
-- App logs out user friendly error messages when the app is pointed to non-existent routes.
+    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-#### Layout, CSS, and styles
-- Final project's layout and positioning matches the mockups and HTML files.
+## 🧐 What's inside?
 
-### Requirements being exceeded
-#### App initialization and dependencies
-- Running `npm start` serves the app.
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-#### Templates
-- An `error` Pug template is present.
+    .
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-#### Errors
-- when the app is directed to a non-existent route, the app displays a user friendly error in the browser, including the following:
-    - `error.message`
-    - `error.status`
-    - `error.stack`
-        - Note: The stack message only appears when the app is running in development mode.
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-#### Layout, CSS, and styles
-- The following items have been customized:
-    - background color (sidebar and mobile navbar are now firebrick red)
-    - color (to supplement the background color change, text is lighter in sidebar and navbar)
-    - text shadow (Main page headers now have a gray shadow)
-    - added logo (present in sidebar and navbar)
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-### Other things of note
-- A favicon has been added for browser tabs and bookmarks.
+3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+
+4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+
+9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+
+10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+
+12. **`README.md`**: A text file containing useful reference information about your project.
+
+## 🎓 Learning Gatsby
+
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+
+## 💫 Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
+
+<!-- AUTO-GENERATED-CONTENT:END -->
