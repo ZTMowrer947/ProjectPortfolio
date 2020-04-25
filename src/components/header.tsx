@@ -14,7 +14,7 @@ const Header: React.FC<HeaderPropTypes> = ({ siteTitle }) => (
     <header className="bg-primary">
         <Navbar variant="dark" expand="lg">
             <Link to="/" className="navbar-brand">
-                {siteTitle}
+                <img src="/images/logo.png" alt="Logo" /> {siteTitle}
             </Link>
         </Navbar>
     </header>
