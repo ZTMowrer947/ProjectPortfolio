@@ -1,35 +1,56 @@
 {
   "name": "project-portfolio",
-  "version": "1.0.0",
-  "description": "Treehouse FSJS Techdegree Unit 6 Project",
-  "main": "app.js",
+  "version": "0.0.0",
   "scripts": {
-    "start:dev": "nodemon -w routes -w data.json -w middleware -w *.js app.js",
-    "start": "node app.js"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run project-portfolio:serve-ssr",
+    "serve:ssr": "node dist/project-portfolio/server/main.js",
+    "build:ssr": "ng build --prod && ng run project-portfolio:server:production",
+    "prerender": "ng run project-portfolio:prerender"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ZTMowrer947/ProjectPortfolio.git"
-  },
-  "keywords": [
-    "Treehouse",
-    "Techdegree",
-    "FSJS",
-    "Portfolio"
-  ],
-  "author": "Zack Mowrer",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ZTMowrer947/ProjectPortfolio/issues"
-  },
-  "homepage": "https://github.com/ZTMowrer947/ProjectPortfolio#readme",
+  "private": true,
   "dependencies": {
-    "express": "^4.16.4",
-    "pug": "^2.0.3",
-    "serve-favicon": "^2.5.0"
+    "@angular/animations": "~9.1.4",
+    "@angular/common": "~9.1.4",
+    "@angular/compiler": "~9.1.4",
+    "@angular/core": "~9.1.4",
+    "@angular/forms": "~9.1.4",
+    "@angular/platform-browser": "~9.1.4",
+    "@angular/platform-browser-dynamic": "~9.1.4",
+    "@angular/platform-server": "~9.1.4",
+    "@angular/router": "~9.1.4",
+    "@nguniversal/express-engine": "^9.1.0",
+    "express": "^4.15.2",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0",
-    "nodemon": "1.17.5"
+    "@angular-devkit/build-angular": "~0.901.4",
+    "@angular/cli": "~9.1.4",
+    "@angular/compiler-cli": "~9.1.4",
+    "@angular/language-service": "~9.1.4",
+    "@nguniversal/builders": "^9.1.0",
+    "@types/express": "^4.17.0",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~3.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "protractor": "~5.4.3",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.8.3"
   }
 }

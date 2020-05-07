@@ -1,96 +1,27 @@
 # ProjectPortfolio
-Treehouse FSJS Techdegree Unit 6 Project
 
-## Project Description
-This project is concerned with creating a portfolio to show off the five previous projects of the Techdegree.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
-## Downloading and Running
-Clone the repository and run npm's start script in the resulting directory.
-```
-git clone https://github.com/ZTMowrer947/ProjectPortfolio
-cd ProjectPortfolio
-npm start
-```
+## Development server
 
-This will run the app in production mode, where the app doesn't restart on changes and the stack traces of errors are hidden (for security reasons).
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-This app app can also be run in development mode, and upon changing code in the backend, the app will automatically restart to apply the changes.
+## Code scaffolding
 
-Running the app in development mode is done by following the above instructions, but replacing `npm start` with `npm run start:dev`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Once you have the app running, it will tell you on which port it is running on. Simply go to `localhost:<port>` in your browser, replacing `<port>` with the provided port number.
+## Build
 
-## Technologies used
-- [Node.js backend](https://nodejs.org)
-- [Pug view engine](https://pugjs.org)
-- [Express web framework](https://expressjs.com)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Project Criteria
-### Requirements being met
-#### App initialization and dependencies
-- The node_modules folder is not included in the repo, as it is present in the .gitignore file.
-- Running `npm install` downloads all dependencies for the app.
-- Running `node app.js` serves the app.
+## Running unit tests
 
-#### Project Data
-- The `data.json` file is present.
-- The `data.json` file a `projects` properties set to an array of five objects, each containing the following properties:
-    - `id`
-    - `project_name`
-    - `description`
-    - `live_link`
-    - `github_link`
-    - `image_urls`
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-#### Routes
-- The following routers render the appropriate pages:
-    - `/` - Home page
-    - `/about` - About page
-    - `/projects` route, includes an `id` parameter
-- There is a `static` route to serve static assets from the `public` folder.
+## Running end-to-end tests
 
-#### Templates
-- The following Pug templates are present:
-    - `layout`
-    - `index`
-    - `about`
-    - `project`
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-- Templates have all the required information as exemplified in the provided HTML and mockup files:
-    - name
-    - titles
-    - descriptions
-    - project descriptions
-    - project images
-    - links
-- The starter comments have been removed from the templates.
+## Further help
 
-#### Errors
-- App logs out user friendly error messages when the app is pointed to non-existent routes.
-
-#### Layout, CSS, and styles
-- Final project's layout and positioning matches the mockups and HTML files.
-
-### Requirements being exceeded
-#### App initialization and dependencies
-- Running `npm start` serves the app.
-
-#### Templates
-- An `error` Pug template is present.
-
-#### Errors
-- when the app is directed to a non-existent route, the app displays a user friendly error in the browser, including the following:
-    - `error.message`
-    - `error.status`
-    - `error.stack`
-        - Note: The stack message only appears when the app is running in development mode.
-
-#### Layout, CSS, and styles
-- The following items have been customized:
-    - background color (sidebar and mobile navbar are now firebrick red)
-    - color (to supplement the background color change, text is lighter in sidebar and navbar)
-    - text shadow (Main page headers now have a gray shadow)
-    - added logo (present in sidebar and navbar)
-
-### Other things of note
-- A favicon has been added for browser tabs and bookmarks.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
