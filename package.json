@@ -1,56 +1,35 @@
 {
-  "name": "portfolio-site",
-  "private": true,
-  "description": "My personal project portfolio, build using Gatsby",
-  "version": "0.1.0",
-  "author": "Zackery Mowrer <Zackmowrer@gmail.com>",
-  "dependencies": {
-    "bootstrap": "^4.4.1",
-    "fibers": "^5.0.0",
-    "gatsby": "^2.20.25",
-    "gatsby-image": "^2.3.4",
-    "gatsby-plugin-manifest": "^2.3.5",
-    "gatsby-plugin-offline": "^3.1.4",
-    "gatsby-plugin-react-helmet": "^3.2.4",
-    "gatsby-plugin-sass": "^2.2.4",
-    "gatsby-plugin-sharp": "^2.5.6",
-    "gatsby-plugin-typescript": "^2.3.5",
-    "gatsby-source-filesystem": "^2.2.4",
-    "gatsby-transformer-sharp": "^2.4.6",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.1",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0",
-    "sass": "^1.26.5"
-  },
-  "devDependencies": {
-    "@types/node": "^13.13.2",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
-    "@types/react-helmet": "^5.0.15",
-    "prettier": "2.0.4",
-    "resolve-url-loader": "^3.1.1",
-    "typescript": "~3.8.3"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "name": "project-portfolio",
+  "version": "1.0.0",
+  "description": "Treehouse FSJS Techdegree Unit 6 Project",
+  "main": "app.js",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "yarn develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "start:dev": "nodemon -w routes -w data.json -w middleware -w *.js app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "git+https://github.com/ZTMowrer947/ProjectPortfolio.git"
   },
+  "keywords": [
+    "Treehouse",
+    "Techdegree",
+    "FSJS",
+    "Portfolio"
+  ],
+  "author": "Zack Mowrer",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ZTMowrer947/ProjectPortfolio/issues"
+  },
+  "homepage": "https://github.com/ZTMowrer947/ProjectPortfolio#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "nodemon": "1.17.5"
   }
 }
