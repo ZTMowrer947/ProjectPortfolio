@@ -68,7 +68,13 @@
             "id": 5,
             "project_name": "Awesome Startup Employee Directory",
             "description": "This project takes advantage of the Random User API to display a set of 12 employees in a directory format. When the employee data is clicked, a modal appears providing more information about that employee, and modal navigation is present to easily switch between employees. Additionally, the user can search for employees by their name and sort their results by first or last name in ascending or descending order. Lastly, there is a dark mode that can be toggled on or off within the site header.",
-            "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "Random User API"],
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "jQuery",
+                "Random User API"
+            ],
             "live_link": "https://ztmowrer947.github.io/AwesomeStartupEmployeeDirectory",
             "github_link": "https://github.com/ZTMowrer947/AwesomeStartupEmployeeDirectory",
             "image_urls": {
@@ -84,7 +90,12 @@
             "id": 6,
             "project_name": "Flickr Image Gallery",
             "description": "This project utilizes React and the Flickr API to provide an easy-to-use photo gallery. Three default tags are provided and loaded on page load, and a search form is placed directly above it to search for other tags.",
-            "technologies": ["React", "React Router", "Flickr API", "material-ui"],
+            "technologies": [
+                "React",
+                "React Router",
+                "Flickr API",
+                "material-ui"
+            ],
             "github_link": "https://github.com/ZTMowrer947/FlickrImageGallery",
             "image_urls": {
                 "landing": "/static/images/projects/6/landing.PNG",
