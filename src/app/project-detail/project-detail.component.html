@@ -1,0 +1,48 @@
+<header>
+    <a routerLink="/projects" class="text-decoration-none">&larr; Back</a>
+</header>
+
+<hr />
+
+<article class="portfolio-intro portfolio-project" *ngIf="project">
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <h1>{{ project.name }}</h1>
+            <p class="lead text-dark">
+                {{ project.description }}
+            </p>
+        </div>
+        <div class="col-12 col-md-3">
+            <h6 class="text-uppercase">Technologies</h6>
+            <ul>
+                <li *ngFor="let technology of project.technologies">
+                    {{ technology }}
+                </li>
+            </ul>
+            <a
+                *ngIf="project.liveLink"
+                [href]="project.liveLink"
+                target="_blank"
+                rel="noopener noreferer"
+                class="btn btn-dark btn-block text-nowrap"
+            >
+                Live Demo
+            </a>
+            <a
+                [href]="project.githubLink"
+                target="_blank"
+                rel="noopener noreferer"
+                class="btn btn-dark btn-block text-nowrap"
+            >
+                Github Repo
+            </a>
+        </div>
+    </div>
+    <hr />
+    <img
+        *ngFor="let image of project.galleryImageUrls"
+        [src]="image"
+        alt="Gallery image for {{ project.name }}"
+        class="img-fluid img-thumbnail"
+    />
+</article>
