@@ -1,6 +1,6 @@
 // Imports
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
 

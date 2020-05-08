@@ -1,12 +1,12 @@
 // Imports
 import { TestBed } from '@angular/core/testing';
 import { plainToClass } from 'class-transformer';
-import { PartialObserver, from } from 'rxjs';
+import { from, PartialObserver } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 import { projects as projectData } from 'data.json';
-import { ProjectService } from './project.service';
 import { Project } from './project';
+import { ProjectService } from './project.service';
 
 // Test Suite
 describe('ProjectService', () => {
