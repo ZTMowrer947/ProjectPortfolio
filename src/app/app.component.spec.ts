@@ -21,13 +21,4 @@ describe('AppComponent', () => {
         const app = fixture.componentInstance;
         expect(app.title).toEqual('project-portfolio');
     });
-
-    it('should render title', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement;
-        expect(compiled.querySelector('.content span').textContent).toContain(
-            'project-portfolio app is running!'
-        );
-    });
 });
