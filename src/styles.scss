@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Adjust primary theme color */
+$theme-colors: (
+    "primary": darken(#f00, 20%),
+);
+
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
