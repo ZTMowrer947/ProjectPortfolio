@@ -1,9 +1,14 @@
 // Imports
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+    ComponentFixture,
+    fakeAsync,
+    TestBed,
+    tick,
+} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import * as faker from 'faker';
 import range from 'lodash/range';
-import { Observable, of } from 'rxjs';
+import { defer } from 'rxjs';
 
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
@@ -14,7 +19,7 @@ describe('PortfolioComponent', () => {
     let component: PortfolioComponent;
     let fixture: ComponentFixture<PortfolioComponent>;
     let projects: Project[];
-    let getListSpy: jasmine.Spy<() => Observable<Project[]>>;
+    let projectService: jasmine.SpyObj<ProjectService>;
 
     beforeEach(async () => {
         // Generate fake project data
@@ -39,9 +44,6 @@ describe('PortfolioComponent', () => {
             ['getList']
         );
 
-        // Setup getList method on spy to return fake project listing
-        getListSpy = projectServiceSpy.getList.and.returnValue(of(projects));
-
         // Configure testing module
         await TestBed.configureTestingModule({
             imports: [RouterTestingModule],
@@ -55,19 +57,44 @@ describe('PortfolioComponent', () => {
         fixture = TestBed.createComponent(PortfolioComponent);
         component = fixture.componentInstance;
 
-        // Detect data changes
-        fixture.detectChanges();
+        // Get injected ProjectService instance
+        projectService = TestBed.inject(ProjectService) as jasmine.SpyObj<
+            ProjectService
+        >;
+
+        // Setup getList method on spy to return fake project listing
+        projectService.getList.and.returnValue(
+            defer(() => Promise.resolve(projects))
+        );
     });
 
-    it('should initialize project data', () => {
+    it('should initialize project data', fakeAsync(() => {
+        // Initialize data bindings
+        fixture.detectChanges();
+
+        // Perform tick to allow project retrieval to complete
+        tick();
+
+        // Detect data changes
+        fixture.detectChanges();
+
         // Expect getList method on project service to have been called
-        expect(getListSpy).toHaveBeenCalled();
+        expect(projectService.getList).toHaveBeenCalled();
 
         // Expect component to have recieved project data
         expect(component.projects).toEqual(projects);
-    });
+    }));
 
-    it('should render landing image, name, and link for each project', () => {
+    it('should render landing image, name, and link for each project', fakeAsync(() => {
+        // Initialize data bindings
+        fixture.detectChanges();
+
+        // Perform tick to allow project retrieval to complete
+        tick();
+
+        // Detect data changes
+        fixture.detectChanges();
+
         // Get native element of fixture
         const compiled: HTMLElement = fixture.nativeElement;
 
@@ -100,5 +127,5 @@ describe('PortfolioComponent', () => {
             // Expect span text to contain project name
             expect(span.textContent).toContain(project.name);
         });
-    });
+    }));
 });
