@@ -1,7 +1,6 @@
 // Imports
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { plainToClass } from 'class-transformer';
 import * as faker from 'faker';
 import range from 'lodash/range';
 import { Observable, of } from 'rxjs';
@@ -19,8 +18,8 @@ describe('PortfolioComponent', () => {
 
     beforeEach(async () => {
         // Generate fake project data
-        projects = range(1, 11)
-            .map((id) => ({
+        projects = range(1, 11).map((id) =>
+            Project.fromJsonData({
                 id,
                 project_name: faker.random.words(3),
                 description: faker.lorem.paragraph(),
@@ -31,8 +30,8 @@ describe('PortfolioComponent', () => {
                     landing: faker.random.image(),
                     gallery: range(0, 4).map(() => faker.random.image()),
                 },
-            }))
-            .map((data) => plainToClass(Project, data));
+            })
+        );
 
         // Create project service spy
         const projectServiceSpy = jasmine.createSpyObj<ProjectService>(

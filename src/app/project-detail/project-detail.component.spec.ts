@@ -5,10 +5,9 @@ import {
     tick,
 } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
-import { plainToClass } from 'class-transformer';
 import * as faker from 'faker';
 import range from 'lodash/range';
-import { defer, of } from 'rxjs';
+import { defer } from 'rxjs';
 
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub.service';
 import { Project } from '../project';
@@ -23,7 +22,7 @@ describe('ProjectDetailComponent', () => {
 
     beforeEach(async () => {
         // Generate fake project data
-        const projectData = {
+        project = Project.fromJsonData({
             id: faker.random.number(50),
             project_name: faker.random.words(3),
             description: faker.lorem.paragraph(),
@@ -34,9 +33,7 @@ describe('ProjectDetailComponent', () => {
                 landing: faker.random.image(),
                 gallery: range(0, 4).map(() => faker.random.image()),
             },
-        };
-
-        project = plainToClass(Project, projectData);
+        });
 
         // Setup ActivatedRoute stub
         const activatedRoute = new ActivatedRouteStub({ id: project.id });

@@ -1,5 +1,6 @@
 // Imports
-import { Exclude, Expose, Type } from 'class-transformer';
+import { Exclude, Expose, plainToClass, Type } from 'class-transformer';
+import { JsonProject } from './json-project';
 
 // Class type
 @Exclude()
@@ -35,5 +36,9 @@ export class Project {
 
     get galleryImageUrls(): string[] {
         return this.imageUrls.gallery;
+    }
+
+    static fromJsonData(data: JsonProject) {
+        return plainToClass(Project, data);
     }
 }

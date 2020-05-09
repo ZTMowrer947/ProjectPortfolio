@@ -1,6 +1,5 @@
 // Imports
 import { Injectable } from '@angular/core';
-import { plainToClass } from 'class-transformer';
 import { of } from 'rxjs';
 
 import { projects as projectData } from 'data.json';
@@ -11,7 +10,9 @@ import { Project } from './project';
     providedIn: 'root',
 })
 export class ProjectService {
-    private readonly projects = plainToClass(Project, projectData);
+    private readonly projects = projectData.map((project) =>
+        Project.fromJsonData(project)
+    );
 
     getList() {
         // Wrap project data inside observable
