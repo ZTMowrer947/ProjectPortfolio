@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { Project } from '../project';
-import { ProjectService } from '../project.service';
 
 @Component({
     selector: 'app-portfolio',
@@ -10,12 +11,12 @@ import { ProjectService } from '../project.service';
 export class PortfolioComponent implements OnInit {
     projects: Project[] = [];
 
-    constructor(private service: ProjectService) {}
+    constructor(private activatedRoute: ActivatedRoute) {}
 
     ngOnInit(): void {
-        // Fetch project listing and attach to component
-        this.service.getList().subscribe((projects) => {
-            this.projects = projects;
+        // Recieve project listing from route data
+        this.activatedRoute.data.subscribe((data: { projects: Project[] }) => {
+            this.projects = data.projects;
         });
     }
 }

@@ -5,13 +5,13 @@ import {
     TestBed,
     tick,
 } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import * as faker from 'faker';
 import range from 'lodash/range';
-import { defer } from 'rxjs';
 
+import { ActivatedRouteStub } from 'src/testing/activated-route-stub.service';
 import { Project } from '../project';
-import { ProjectService } from '../project.service';
 import { PortfolioComponent } from './portfolio.component';
 
 // Test Suite
@@ -19,7 +19,6 @@ describe('PortfolioComponent', () => {
     let component: PortfolioComponent;
     let fixture: ComponentFixture<PortfolioComponent>;
     let projects: Project[];
-    let projectService: jasmine.SpyObj<ProjectService>;
 
     beforeEach(async () => {
         // Generate fake project data
@@ -38,34 +37,19 @@ describe('PortfolioComponent', () => {
             })
         );
 
-        // Create project service spy
-        const projectServiceSpy = jasmine.createSpyObj<ProjectService>(
-            'ProjectService',
-            ['getList']
-        );
+        // Create ActivatedRoute stub
+        const activatedRoute = new ActivatedRouteStub(undefined, { projects });
 
         // Configure testing module
         await TestBed.configureTestingModule({
             imports: [RouterTestingModule],
             declarations: [PortfolioComponent],
-            providers: [
-                { provide: ProjectService, useValue: projectServiceSpy },
-            ],
+            providers: [{ provide: ActivatedRoute, useValue: activatedRoute }],
         }).compileComponents();
 
         // Create fixture and get component instance
         fixture = TestBed.createComponent(PortfolioComponent);
         component = fixture.componentInstance;
-
-        // Get injected ProjectService instance
-        projectService = TestBed.inject(ProjectService) as jasmine.SpyObj<
-            ProjectService
-        >;
-
-        // Setup getList method on spy to return fake project listing
-        projectService.getList.and.returnValue(
-            defer(() => Promise.resolve(projects))
-        );
     });
 
     it('should initialize project data', fakeAsync(() => {
@@ -77,9 +61,6 @@ describe('PortfolioComponent', () => {
 
         // Detect data changes
         fixture.detectChanges();
-
-        // Expect getList method on project service to have been called
-        expect(projectService.getList).toHaveBeenCalled();
 
         // Expect component to have recieved project data
         expect(component.projects).toEqual(projects);
