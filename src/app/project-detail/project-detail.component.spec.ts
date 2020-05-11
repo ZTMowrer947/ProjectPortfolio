@@ -7,18 +7,15 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import * as faker from 'faker';
 import range from 'lodash/range';
-import { defer } from 'rxjs';
 
 import { ActivatedRouteStub } from 'src/testing/activated-route-stub.service';
 import { Project } from '../project';
-import { ProjectService } from '../project.service';
 import { ProjectDetailComponent } from './project-detail.component';
 
 describe('ProjectDetailComponent', () => {
     let component: ProjectDetailComponent;
     let fixture: ComponentFixture<ProjectDetailComponent>;
     let project: Project;
-    let projectService: jasmine.SpyObj<ProjectService>;
 
     beforeEach(async () => {
         // Generate fake project data
@@ -36,36 +33,20 @@ describe('ProjectDetailComponent', () => {
         });
 
         // Setup ActivatedRoute stub
-        const activatedRoute = new ActivatedRouteStub({ id: project.id });
-
-        // Create ProjectService spy
-        const projectServiceSpy = jasmine.createSpyObj<ProjectService>(
-            'ProjectService',
-            ['getById']
+        const activatedRoute = new ActivatedRouteStub(
+            { id: project.id },
+            { project }
         );
 
         // Configure testing module
         await TestBed.configureTestingModule({
             declarations: [ProjectDetailComponent],
-            providers: [
-                { provide: ActivatedRoute, useValue: activatedRoute },
-                { provide: ProjectService, useValue: projectServiceSpy },
-            ],
+            providers: [{ provide: ActivatedRoute, useValue: activatedRoute }],
         }).compileComponents();
 
         // Create fixture and get component instance
         fixture = TestBed.createComponent(ProjectDetailComponent);
         component = fixture.componentInstance;
-
-        // Get injected ProjectService instance
-        projectService = TestBed.inject(ProjectService) as jasmine.SpyObj<
-            ProjectService
-        >;
-
-        // Setup getById method on ProjectService to return fake project data
-        projectService.getById.and.returnValue(
-            defer(() => Promise.resolve(project))
-        );
     });
 
     it('should initialize project data', fakeAsync(() => {
@@ -77,9 +58,6 @@ describe('ProjectDetailComponent', () => {
 
         // Detect data changes
         fixture.detectChanges();
-
-        // Expect that getById method on project service was called, and with the correct id
-        expect(projectService.getById).toHaveBeenCalledWith(project.id);
 
         // Expect project data to be set on component
         expect(component.project).toEqual(project);

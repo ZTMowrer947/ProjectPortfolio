@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectListingResolverService } from './project-listing-resolver.service';
+import { ProjectResolverService } from './project-resolver.service';
 
 // Routes
 const routes: Routes = [
@@ -25,6 +26,9 @@ const routes: Routes = [
         path: 'projects/:id',
         pathMatch: 'full',
         component: ProjectDetailComponent,
+        resolve: {
+            project: ProjectResolverService,
+        },
     },
 ];
 
