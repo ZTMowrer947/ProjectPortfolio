@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "zackm-portfolio": {
+      "hosting": {
+        "project-portfolio": [
+          "zackm-portfolio"
+        ]
+      }
+    }
+  }
+}
