@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectListingResolverService } from './project-listing-resolver.service';
@@ -29,6 +30,11 @@ const routes: Routes = [
         resolve: {
             project: ProjectResolverService,
         },
+    },
+    {
+        path: 'about',
+        pathMatch: 'full',
+        component: AboutComponent,
     },
 ];
 

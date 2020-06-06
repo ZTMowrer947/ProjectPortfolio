@@ -8,10 +8,11 @@ import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectService } from './project.service';
+import { AboutComponent } from './about/about.component';
 
 // Module
 @NgModule({
-    declarations: [AppComponent, PortfolioComponent, ProjectDetailComponent],
+    declarations: [AppComponent, PortfolioComponent, ProjectDetailComponent, AboutComponent],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
         AppRoutingModule,
