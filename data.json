@@ -5,8 +5,8 @@
             "project_name": "Random Quote Generator",
             "description": "This project is a random quote generator, where each time the central button is clicked or 30 seconds pass without clicking the button (whichever comes first), the background changes and a new random quote is loaded. Currently, this only operates on a fixed array of quote objects, but could easily be expanded to use a database or API.",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "live_link": "https://ztmowrer947.github.io/RandomQuoteGenerator",
-            "github_link": "https://github.com/ZTMowrer947/RandomQuoteGenerator",
+            "live_link": "https://ztmowrer947.github.io/fsjs-random-quote-generator",
+            "github_link": "https://github.com/ZTMowrer947/fsjs-random-quote-generator",
             "image_urls": {
                 "landing": "/assets/images/projects/1/landing.png",
                 "gallery": [
@@ -21,8 +21,8 @@
             "project_name": "Student List Paginator",
             "description": "This project is concerned with paginating a list of students into a set of 10 students per page (by default). Additionally, students can be searched for by their name and results can be sorted by name or join data in ascending or descending order. Lastly, results can be paginated into varying amounts of students per page. All of these features are added unobtrusively, such that the enitire list of students is displayed when JavaScript is disabled.",
             "technologies": ["HTML", "CSS", "JavaScript"],
-            "live_link": "https://ztmowrer947.github.io/StudentListPaginator",
-            "github_link": "https://github.com/ZTMowrer947/StudentListPaginator",
+            "live_link": "https://ztmowrer947.github.io/student-list-pagination",
+            "github_link": "https://github.com/ZTMowrer947/student-list-pagination",
             "image_urls": {
                 "landing": "/assets/images/projects/2/landing.png",
                 "gallery": [
@@ -37,8 +37,8 @@
             "project_name": "Interactive Registration Form",
             "description": "This project involves the unobtrusive addition of validation to a registration form for a made-up conference, Full Stack Conf. When JavaScript is disabled, the form still functions normally.",
             "technologies": ["HTML", "CSS", "JavaScript", "jQuery"],
-            "live_link": "https://ztmowrer947.github.io/InteractiveRegistrationForm",
-            "github_link": "https://github.com/ZTMowrer947/InteractiveRegistrationForm",
+            "live_link": "https://ztmowrer947.github.io/interactive-registration-form",
+            "github_link": "https://github.com/ZTMowrer947/interactive-registration-form",
             "image_urls": {
                 "landing": "/assets/images/projects/3/landing.png",
                 "gallery": [
@@ -53,8 +53,8 @@
             "project_name": "Phrase Hunter",
             "description": "This project is a simple web-based game similar to that of Hangman in concept. The user must guess a phrase by guessing letters individually, and they must reveal all letters in the phrase before running out of lives. The game also has different levels of difficulty as well as the ability to input guesses using a physical keyboard, alongside the on-screen keyboard. Phrase Hunter was designed from the ground up to take advantage of object-oriented programming features present in the ECMAScript 2015 standard of JavaScript.",
             "technologies": ["HTML", "CSS", "JavaScript", "jQuery", "OOP"],
-            "live_link": "https://ztmowrer947.github.io/PhraseHunter",
-            "github_link": "https://github.com/ZTMowrer947/PhraseHunter",
+            "live_link": "https://ztmowrer947.github.io/fsjs-phrase-hunter",
+            "github_link": "https://github.com/ZTMowrer947/fsjs-phrase-hunter",
             "image_urls": {
                 "landing": "/assets/images/projects/4/landing.png",
                 "gallery": [
@@ -75,8 +75,8 @@
                 "jQuery",
                 "Random User API"
             ],
-            "live_link": "https://ztmowrer947.github.io/AwesomeStartupEmployeeDirectory",
-            "github_link": "https://github.com/ZTMowrer947/AwesomeStartupEmployeeDirectory",
+            "live_link": "https://ztmowrer947.github.io/awesome-startup-employee-directory",
+            "github_link": "https://github.com/ZTMowrer947/awesome-startup-employee-directory",
             "image_urls": {
                 "landing": "/assets/images/projects/5/landing.png",
                 "gallery": [
@@ -98,7 +98,7 @@
                 "Bootstrap",
                 "TypeScript"
             ],
-            "github_link": "https://github.com/ZTMowrer947/FlickrImageGallery",
+            "github_link": "https://github.com/ZTMowrer947/flickr-image-gallery",
             "image_urls": {
                 "landing": "/assets/images/projects/6/landing.png",
                 "gallery": [
@@ -113,7 +113,7 @@
             "project_name": "Library Manager",
             "description": "This project uses the Sequelize ORM and the Express framework to provide a library manager for a book database. Books can be retrieved, created, updated, and delete. Additionally, books can be searched for and sorted by various properties (in ascending or descending order). Forms are validated on both the server-side and client-side.",
             "technologies": ["Express", "Pug", "SQLite", "Sequelize"],
-            "github_link": "https://github.com/ZTMowrer947/LibraryManager",
+            "github_link": "https://github.com/ZTMowrer947/library-manager",
             "image_urls": {
                 "landing": "/assets/images/projects/7/landing.png",
                 "gallery": [
