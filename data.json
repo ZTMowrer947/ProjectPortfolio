@@ -8,11 +8,11 @@
             "live_link": "https://ztmowrer947.github.io/RandomQuoteGenerator",
             "github_link": "https://github.com/ZTMowrer947/RandomQuoteGenerator",
             "image_urls": {
-                "landing": "/assets/images/projects/1/landing.PNG",
+                "landing": "/assets/images/projects/1/landing.png",
                 "gallery": [
-                    "/assets/images/projects/1/gallery1.PNG",
-                    "/assets/images/projects/1/gallery2.PNG",
-                    "/assets/images/projects/1/gallery3.PNG"
+                    "/assets/images/projects/1/gallery1.png",
+                    "/assets/images/projects/1/gallery2.png",
+                    "/assets/images/projects/1/gallery3.png"
                 ]
             }
         },
@@ -24,11 +24,11 @@
             "live_link": "https://ztmowrer947.github.io/StudentListPaginator",
             "github_link": "https://github.com/ZTMowrer947/StudentListPaginator",
             "image_urls": {
-                "landing": "/assets/images/projects/2/landing.PNG",
+                "landing": "/assets/images/projects/2/landing.png",
                 "gallery": [
-                    "/assets/images/projects/2/gallery1.PNG",
-                    "/assets/images/projects/2/gallery2.PNG",
-                    "/assets/images/projects/2/gallery3.PNG"
+                    "/assets/images/projects/2/gallery1.png",
+                    "/assets/images/projects/2/gallery2.png",
+                    "/assets/images/projects/2/gallery3.png"
                 ]
             }
         },
@@ -40,11 +40,11 @@
             "live_link": "https://ztmowrer947.github.io/InteractiveRegistrationForm",
             "github_link": "https://github.com/ZTMowrer947/InteractiveRegistrationForm",
             "image_urls": {
-                "landing": "/assets/images/projects/3/landing.PNG",
+                "landing": "/assets/images/projects/3/landing.png",
                 "gallery": [
-                    "/assets/images/projects/3/gallery1.PNG",
-                    "/assets/images/projects/3/gallery2.PNG",
-                    "/assets/images/projects/3/gallery3.PNG"
+                    "/assets/images/projects/3/gallery1.png",
+                    "/assets/images/projects/3/gallery2.png",
+                    "/assets/images/projects/3/gallery3.png"
                 ]
             }
         },
@@ -56,11 +56,11 @@
             "live_link": "https://ztmowrer947.github.io/PhraseHunter",
             "github_link": "https://github.com/ZTMowrer947/PhraseHunter",
             "image_urls": {
-                "landing": "/assets/images/projects/4/landing.PNG",
+                "landing": "/assets/images/projects/4/landing.png",
                 "gallery": [
-                    "/assets/images/projects/4/gallery1.PNG",
-                    "/assets/images/projects/4/gallery2.PNG",
-                    "/assets/images/projects/4/gallery3.PNG"
+                    "/assets/images/projects/4/gallery1.png",
+                    "/assets/images/projects/4/gallery2.png",
+                    "/assets/images/projects/4/gallery3.png"
                 ]
             }
         },
@@ -78,11 +78,11 @@
             "live_link": "https://ztmowrer947.github.io/AwesomeStartupEmployeeDirectory",
             "github_link": "https://github.com/ZTMowrer947/AwesomeStartupEmployeeDirectory",
             "image_urls": {
-                "landing": "/assets/images/projects/5/landing.PNG",
+                "landing": "/assets/images/projects/5/landing.png",
                 "gallery": [
-                    "/assets/images/projects/5/gallery1.PNG",
-                    "/assets/images/projects/5/gallery2.PNG",
-                    "/assets/images/projects/5/gallery3.PNG"
+                    "/assets/images/projects/5/gallery1.png",
+                    "/assets/images/projects/5/gallery2.png",
+                    "/assets/images/projects/5/gallery3.png"
                 ]
             }
         },
@@ -100,11 +100,11 @@
             ],
             "github_link": "https://github.com/ZTMowrer947/FlickrImageGallery",
             "image_urls": {
-                "landing": "/assets/images/projects/6/landing.PNG",
+                "landing": "/assets/images/projects/6/landing.png",
                 "gallery": [
-                    "/assets/images/projects/6/gallery1.PNG",
-                    "/assets/images/projects/6/gallery2.PNG",
-                    "/assets/images/projects/6/gallery3.PNG"
+                    "/assets/images/projects/6/gallery1.png",
+                    "/assets/images/projects/6/gallery2.png",
+                    "/assets/images/projects/6/gallery3.png"
                 ]
             }
         },
@@ -115,11 +115,11 @@
             "technologies": ["Express", "Pug", "SQLite", "Sequelize"],
             "github_link": "https://github.com/ZTMowrer947/LibraryManager",
             "image_urls": {
-                "landing": "/assets/images/projects/7/landing.PNG",
+                "landing": "/assets/images/projects/7/landing.png",
                 "gallery": [
-                    "/assets/images/projects/7/gallery1.PNG",
-                    "/assets/images/projects/7/gallery2.PNG",
-                    "/assets/images/projects/7/gallery3.PNG"
+                    "/assets/images/projects/7/gallery1.png",
+                    "/assets/images/projects/7/gallery2.png",
+                    "/assets/images/projects/7/gallery3.png"
                 ]
             }
         },
@@ -130,11 +130,11 @@
             "technologies": ["Koa", "TypeORM", "SQLite", "TypeScript", "REST"],
             "github_link": "https://github.com/ZTMowrer947/school-database-api",
             "image_urls": {
-                "landing": "/assets/images/projects/8/landing.PNG",
+                "landing": "/assets/images/projects/8/landing.png",
                 "gallery": [
-                    "/assets/images/projects/8/gallery1.PNG",
-                    "/assets/images/projects/8/gallery2.PNG",
-                    "/assets/images/projects/8/gallery3.PNG"
+                    "/assets/images/projects/8/gallery1.png",
+                    "/assets/images/projects/8/gallery2.png",
+                    "/assets/images/projects/8/gallery3.png"
                 ]
             }
         },
@@ -148,12 +148,13 @@
                 "TypeScript",
                 "School Database API"
             ],
+            "github_link": "https://github.com/ZTMowrer947/react-school-db-client",
             "image_urls": {
-                "landing": "/assets/images/projects/9/landing.PNG",
+                "landing": "/assets/images/projects/9/landing.png",
                 "gallery": [
-                    "/assets/images/projects/9/gallery1.PNG",
-                    "/assets/images/projects/9/gallery2.PNG",
-                    "/assets/images/projects/9/gallery3.PNG"
+                    "/assets/images/projects/9/gallery1.png",
+                    "/assets/images/projects/9/gallery2.png",
+                    "/assets/images/projects/9/gallery3.png"
                 ]
             }
         }
