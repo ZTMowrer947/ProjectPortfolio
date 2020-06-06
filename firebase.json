@@ -1,22 +1,18 @@
 {
-  "hosting": [
-    {
-      "target": "project-portfolio",
-      "public": "dist\\project-portfolio\\dist\\project-portfolio\\browser",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
+    "hosting": [
         {
-          "source": "**",
-          "function": "ssr"
+            "target": "project-portfolio",
+            "public": "dist/project-portfolio/dist/project-portfolio/browser",
+            "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+            "rewrites": [
+                {
+                    "source": "**",
+                    "function": "ssr"
+                }
+            ]
         }
-      ]
+    ],
+    "functions": {
+        "source": "dist/project-portfolio"
     }
-  ],
-  "functions": {
-    "source": "dist/project-portfolio"
-  }
 }
