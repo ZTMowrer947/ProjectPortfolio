@@ -92,9 +92,11 @@
             "description": "This project utilizes React and the Flickr API to provide an easy-to-use photo gallery. Three default tags are provided and loaded on page load, and a search form is placed directly above it to search for other tags.",
             "technologies": [
                 "React",
+                "Redux",
                 "React Router",
                 "Flickr API",
-                "material-ui"
+                "Bootstrap",
+                "TypeScript"
             ],
             "github_link": "https://github.com/ZTMowrer947/FlickrImageGallery",
             "image_urls": {
@@ -118,6 +120,40 @@
                     "/assets/images/projects/7/gallery1.PNG",
                     "/assets/images/projects/7/gallery2.PNG",
                     "/assets/images/projects/7/gallery3.PNG"
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "project_name": "School Database API",
+            "description": "This project, powered by the Koa framework and TypeORM, provides a REST API for managing user and course data. Validation is employed to ensure all user and course data is valid, and that only the owner of a course can modify said course. Passwords are securely stored as hashes in the database, and said hashes are not exposed in response data.",
+            "technologies": ["Koa", "TypeORM", "SQLite", "TypeScript", "REST"],
+            "github_link": "https://github.com/ZTMowrer947/school-database-api",
+            "image_urls": {
+                "landing": "/assets/images/projects/8/landing.PNG",
+                "gallery": [
+                    "/assets/images/projects/8/gallery1.PNG",
+                    "/assets/images/projects/8/gallery2.PNG",
+                    "/assets/images/projects/8/gallery3.PNG"
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "project_name": "School Database Client",
+            "description": "This project utilizes React and the associated School Database API to provide a simple and easy-to-use client for the API, allowing users to create, read, modify, and delete course data.",
+            "technologies": [
+                "React",
+                "React Router",
+                "TypeScript",
+                "School Database API"
+            ],
+            "image_urls": {
+                "landing": "/assets/images/projects/9/landing.PNG",
+                "gallery": [
+                    "/assets/images/projects/9/gallery1.PNG",
+                    "/assets/images/projects/9/gallery2.PNG",
+                    "/assets/images/projects/9/gallery3.PNG"
                 ]
             }
         }
