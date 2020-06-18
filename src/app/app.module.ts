@@ -9,10 +9,17 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectService } from './project.service';
 import { AboutComponent } from './about/about.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // Module
 @NgModule({
-    declarations: [AppComponent, PortfolioComponent, ProjectDetailComponent, AboutComponent],
+    declarations: [
+        AppComponent,
+        PortfolioComponent,
+        ProjectDetailComponent,
+        AboutComponent,
+        NotFoundComponent,
+    ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
         AppRoutingModule,

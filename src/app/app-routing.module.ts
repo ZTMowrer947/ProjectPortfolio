@@ -7,6 +7,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { ProjectListingResolverService } from './project-listing-resolver.service';
 import { ProjectResolverService } from './project-resolver.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // Routes
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
         path: 'about',
         pathMatch: 'full',
         component: AboutComponent,
+    },
+    {
+        path: '**',
+        component: NotFoundComponent,
     },
 ];
 
