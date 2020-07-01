@@ -1,17 +1,21 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // Imports
+import 'bootstrap/scss/bootstrap.scss';
 import React from 'react';
 import { AppProps } from 'next/app';
 import Container from 'react-bootstrap/Container';
 
-import 'bootstrap/scss/bootstrap.scss';
+import Header from '../components/Header';
 
 // App component
-const CustomApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const CustomApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     return (
-        <Container fluid>
-            <Component {...pageProps} />
-        </Container>
+        <>
+            <Header />
+            <Container fluid>
+                <Component {...pageProps} />
+            </Container>
+        </>
     );
 };
 
