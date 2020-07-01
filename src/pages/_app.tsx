@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // Imports
-import 'bootstrap/scss/bootstrap.scss';
+import '../app.scss';
 import React from 'react';
 import { AppProps } from 'next/app';
 import Container from 'react-bootstrap/Container';
