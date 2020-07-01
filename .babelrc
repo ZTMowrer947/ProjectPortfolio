@@ -1,27 +1,20 @@
 {
     "presets": [
-        // Environment
+        // Next.js
         [
-            "@babel/preset-env",
+            "next/babel",
             {
-                // Use core-js version 3
-                "corejs": 3,
+                "preset-env": {
+                    // Use core-js version 3
+                    "corejs": 3,
 
-                // Add polyfills based on usage
-                "useBuiltIns": "usage"
+                    // Add polyfills based on usage
+                    "useBuiltIns": "usage"
+                }
             }
-        ],
-
-        // TypeScript
-        "@babel/preset-typescript"
+        ]
     ],
     "plugins": [
-        // Class properties
-        ["@babel/plugin-proposal-class-properties", { "loose": true }],
-
-        // Object spread ({ ...a }) proposal
-        "@babel/plugin-proposal-object-rest-spread",
-
         // Optional chaining (a?.b) proposal
         "@babel/plugin-proposal-optional-chaining",
 
