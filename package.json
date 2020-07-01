@@ -4,7 +4,13 @@
   "description": "Zack Mowrer's Portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=production node dist",
+    "build": "cross-env NODE_ENV=production gulp",
+    "dev": "nodemon",
+    "lint": "eslint . --ext .js,.ts",
+    "test": "jest",
+    "typecheck": "tsc -noEmit",
+    "typecheck:watch": "tsc -noEmit -w"
   },
   "repository": {
     "type": "git",
@@ -15,5 +21,51 @@
   "bugs": {
     "url": "https://github.com/ZTMowrer947/project-portfolio/issues"
   },
-  "homepage": "https://github.com/ZTMowrer947/project-portfolio#readme"
+  "homepage": "https://github.com/ZTMowrer947/project-portfolio#readme",
+  "dependencies": {
+    "core-js": "3",
+    "cross-env": "^7.0.2",
+    "regenerator-runtime": "^0.13.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "~7.10.3",
+    "@babel/core": "~7.10.3",
+    "@babel/plugin-proposal-class-properties": "~7.10.1",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "~7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "~7.10.3",
+    "@babel/plugin-proposal-optional-chaining": "~7.10.3",
+    "@babel/preset-env": "~7.10.3",
+    "@babel/preset-typescript": "~7.10.1",
+    "@babel/register": "~7.10.3",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "babel-jest": "^26.1.0",
+    "del": "^5.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "2.21.2",
+    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-terser": "^1.2.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "typescript": "~3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix"
+  }
 }
