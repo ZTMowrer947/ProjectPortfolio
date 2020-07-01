@@ -6,11 +6,13 @@
         "ecmaVersion": 2019
     },
     "extends": [
-        "airbnb-base",
+        "airbnb",
+        "airbnb/hooks",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:prettier/recommended",
-        "prettier/@typescript-eslint"
+        "prettier/@typescript-eslint",
+        "prettier/react"
     ],
     "rules": {
         "no-unused-vars": "off",
@@ -26,6 +28,12 @@
                 "jsx": "never",
                 "ts": "never",
                 "tsx": "never"
+            }
+        ],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [".js", ".jsx", ".tsx"]
             }
         ]
     },

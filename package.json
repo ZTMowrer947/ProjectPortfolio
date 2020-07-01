@@ -6,7 +6,7 @@
     "start": "next start",
     "build": "next build",
     "dev": "next",
-    "lint": "eslint . --ext .js,.ts",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "test": "jest",
     "typecheck": "tsc -noEmit",
     "typecheck:watch": "tsc -noEmit -w"
@@ -48,11 +48,14 @@
     "babel-jest": "^26.1.0",
     "del": "^5.1.0",
     "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-jsx-a11y": "6.3.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-terser": "^1.2.0",
@@ -70,6 +73,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts}": "eslint --cache --fix"
+    "*.{js,ts,jsx,tsx}": "eslint --cache --fix"
   }
 }
