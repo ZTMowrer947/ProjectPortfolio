@@ -11,13 +11,13 @@ const Header: React.FC = () => {
     return (
         <header className="bg-primary">
             <Navbar variant="dark" expand="lg">
-                <Link href="/" passHref>
+                <Link href="/projects" passHref>
                     <Navbar.Brand>Zack Mowrer&apos;s Portfolio</Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="#navb" />
                 <Navbar.Collapse id="navb">
                     <Nav className="mr-auto">
-                        <NavLink href="/">Portfolio</NavLink>
+                        <NavLink href="/projects">Portfolio</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
