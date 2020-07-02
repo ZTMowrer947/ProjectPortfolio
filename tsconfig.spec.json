@@ -3,5 +3,5 @@
     "compilerOptions": {
         "types": ["jest"]
     },
-    "include": ["./src/**/__tests__/**/*", "next-env.d.ts"]
+    "include": ["./src/**/__tests__/**/*", "next-env.d.ts", "./src/testSetup.ts"]
 }

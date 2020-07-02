@@ -1,5 +1,5 @@
 {
     "extends": "./tsconfig.base.json",
     "include": ["./src/**/*", "next-env.d.ts"],
-    "exclude": ["./src/index.js", "./src/**/__tests__/**/*"]
+    "exclude": ["./src/index.js", "./src/**/__tests__/**/*", "./src/testSetup.ts"]
 }
