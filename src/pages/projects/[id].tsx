@@ -1,6 +1,10 @@
 // Imports
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Link from 'next/link';
 import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 
 import Project from '../../models/Project';
 import ProjectService from '../../services/ProjectService';
@@ -55,7 +59,76 @@ const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // Component
-const ProjectDetail: React.FC<PropTypes> = ({ project }) => <h1 className="display-4">{project.name}</h1>;
+const ProjectDetail: React.FC<PropTypes> = ({ project }) => {
+    return (
+        <>
+            <header>
+                <Link href="/projects" passHref>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a className="text-decoration-none">&larr; Back</a>
+                </Link>
+            </header>
+
+            <hr />
+
+            <article className="portfolio-intro portfolio-project">
+                <Row>
+                    <Col xs={12} md={9}>
+                        <h1>{project.name}</h1>
+                        <p className="lead text-dark">{project.description}</p>
+                    </Col>
+                    <Col xs={12} md={3}>
+                        <h6 className="text-uppercase">Technologies</h6>
+                        <ul>
+                            {project.technologies.map((technology) => (
+                                <li key={technology} data-testid="project-technology">
+                                    {technology}
+                                </li>
+                            ))}
+                        </ul>
+                        {project.liveLink && (
+                            <a
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-dark btn-block text-nowrap"
+                                data-testid="live-link"
+                            >
+                                Live Demo
+                            </a>
+                        )}
+                        <a
+                            href={project.githubLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-dark btn-block text-nowrap"
+                            data-testid="gh-link"
+                        >
+                            Github Repo
+                        </a>
+                    </Col>
+                </Row>
+                <hr />
+                {project.galleryImageUrls.map((imageUrl) => {
+                    const urlFragments = imageUrl.split('/');
+                    const filename = urlFragments[urlFragments.length - 1];
+                    const key = `${project.id}-${filename.replace(/\..*$/, '')}`;
+
+                    return (
+                        <Image
+                            src={imageUrl}
+                            alt={`Gallery image for "${project.name}"`}
+                            fluid
+                            thumbnail
+                            key={key}
+                            data-testid="gallery-image"
+                        />
+                    );
+                })}
+            </article>
+        </>
+    );
+};
 
 // Exports
 export default ProjectDetail;
