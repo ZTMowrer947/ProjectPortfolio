@@ -18,7 +18,7 @@ describe('<Portfolio>', () => {
         const { getByText, getAllByTestId } = render(<Portfolio projects={projects} />);
 
         // Get all project items
-        const projectItems = getAllByTestId('project-link');
+        const projectItems = getAllByTestId('project-item');
 
         // Expect there to be a project item for each project
         expect(projectItems).toHaveLength(projects.length);
@@ -29,7 +29,7 @@ describe('<Portfolio>', () => {
             const project = projects[index];
 
             // Get project link, title, and landingImage
-            const projectLink = projectItem.querySelector('project-link');
+            const projectLink = projectItem.querySelector('.project-link');
             const projectTitle = getByText(project.name);
             const projectLandingImage = projectItem.querySelector('img');
 
