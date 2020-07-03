@@ -2,17 +2,29 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import React from 'react';
 
-import { projects as projectData } from '../../../data.json';
+import Project from '../../models/Project';
+import ProjectService from '../../services/ProjectService';
 
 // Prop Types
 interface PropTypes {
-    project: typeof projectData[0];
+    project: Project;
 }
 
 // Static Prop Retrieval
 const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
+    // Get project ID
+    const id = params?.id;
+
+    // If ID is not a string, or is not a number,
+    if (typeof id !== 'string' || Number.isNaN(Number.parseInt(id, 10))) {
+        throw new Error('ID must be a numeric value');
+    }
+
+    // Otherwise, parse as integer
+    const parsedId = Number.parseInt(id, 10);
+
     // Attempt to find project
-    const project = projectData.find((proj) => proj.id.toString() === params?.id);
+    const project = await ProjectService.get(parsedId);
 
     // If project could not be found,
     if (!project) {
@@ -20,25 +32,30 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
         throw new Error(`Could not find project with provided ID`);
     }
 
-    return Promise.resolve({
+    // Attach project data to props
+    return {
         props: { project },
-    });
+    };
 };
 
 // Static Paths
 const getStaticPaths: GetStaticPaths = async () => {
-    return Promise.resolve({
-        paths: projectData.map((project) => ({
+    // Get project listing
+    const projects = await ProjectService.getList();
+
+    // Create path data without fallback
+    return {
+        paths: projects.map((project) => ({
             params: {
                 id: project.id.toString(),
             },
         })),
         fallback: false,
-    });
+    };
 };
 
 // Component
-const ProjectDetail: React.FC<PropTypes> = ({ project }) => <h1 className="display-4">{project.project_name}</h1>;
+const ProjectDetail: React.FC<PropTypes> = ({ project }) => <h1 className="display-4">{project.name}</h1>;
 
 // Exports
 export default ProjectDetail;
