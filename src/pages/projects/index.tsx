@@ -55,6 +55,14 @@ const Portfolio: React.FC<PropTypes> = ({ projects }) => {
                     ))}
                 </Row>
             </article>
+            <style jsx>
+                {`
+                    .portfolio-index .project-title {
+                        font-family: 'Work Sans', sans-serif;
+                        font-size: 1.25rem;
+                    }
+                `}
+            </style>
         </>
     );
 };
