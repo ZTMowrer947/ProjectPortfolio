@@ -54,13 +54,16 @@
     },
     "overrides": [
         {
-            "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)", "src/testSetup.ts"],
+            "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)", "**/__mocks__/**/*.[jt]s?(x)", "src/testSetup.ts"],
             "extends": ["plugin:jest/recommended"],
             "env": {
                 "jest": true
             },
             "parserOptions": {
                 "project": "./tsconfig.spec.json"
+            },
+            "rules": {
+                "import/no-extraneous-dependencies": "error"
             }
         }
     ]
