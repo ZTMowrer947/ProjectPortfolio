@@ -62,7 +62,7 @@ const getStaticPaths: GetStaticPaths = async () => {
 const ProjectDetail: React.FC<PropTypes> = ({ project }) => {
     return (
         <>
-            <header>
+            <header className="mt-3">
                 <Link href="/projects" passHref>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a className="text-decoration-none">&larr; Back</a>
@@ -109,10 +109,10 @@ const ProjectDetail: React.FC<PropTypes> = ({ project }) => {
                     </Col>
                 </Row>
                 <hr />
-                {project.galleryImageUrls.map((imageUrl) => {
+                {project.galleryImageUrls.map((imageUrl, index) => {
                     const urlFragments = imageUrl.split('/');
                     const filename = urlFragments[urlFragments.length - 1];
-                    const key = `${project.id}-${filename.replace(/\..*$/, '')}`;
+                    const key = `${project.id}-${filename.replace(/\..*$/, '')}-${index}`;
 
                     return (
                         <Image
