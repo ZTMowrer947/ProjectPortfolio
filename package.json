@@ -2,11 +2,18 @@
   "name": "project-portfolio",
   "version": "3.0.0",
   "description": "Zack Mowrer's Portfolio",
+  "engines": {
+    "node": "10"
+  },
+  "main": "firebaseFuncs.js",
   "scripts": {
     "start": "next start",
+    "prebuild": "rimraf .next",
     "build": "next build",
     "dev": "next",
+    "serve": "yarpm build && cross-env NODE_ENV=production firebase emulators:start --only functions,hosting",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "deploy": "cross-env NODE_ENV=production firebase deploy --only functions,hosting",
     "test": "jest",
     "typecheck": "tsc -noEmit",
     "typecheck:watch": "yarpm typecheck -w"
@@ -30,6 +37,7 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.9",
     "yarpm": "^0.2.1"
   },
