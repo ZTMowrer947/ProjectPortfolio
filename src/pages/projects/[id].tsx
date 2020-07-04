@@ -1,5 +1,6 @@
 // Imports
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
@@ -62,6 +63,9 @@ const getStaticPaths: GetStaticPaths = async () => {
 const ProjectDetail: React.FC<PropTypes> = ({ project }) => {
     return (
         <>
+            <Head>
+                <title>Zack Mowrer | {project.name}</title>
+            </Head>
             <header className="mt-3">
                 <Link href="/projects" passHref>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
