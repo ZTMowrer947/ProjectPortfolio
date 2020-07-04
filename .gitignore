@@ -104,4 +104,7 @@ dist
 .tern-port
 
 # IDE Configuration
-.vscode
+.vscode/
+
+# Firebase deployment files
+.firebase/
