@@ -6,6 +6,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 
 import '../app.scss';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 // App component
@@ -21,6 +22,8 @@ const CustomApp: React.FC<AppProps> = ({ Component, pageProps }) => {
             <Container fluid>
                 <Component {...pageProps} />
             </Container>
+            <hr />
+            <Footer />
         </>
     );
 };
