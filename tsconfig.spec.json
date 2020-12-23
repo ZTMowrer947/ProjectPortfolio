@@ -1,7 +1,11 @@
 {
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "types": ["jest"]
+        "types": ["jest"],
+        "baseUrl": ".",
+        "paths": {
+          "@/*": ["src/*"]
+        }
     },
     "include": ["./src/**/__tests__/**/*", "next-env.d.ts", "**/__mocks__/**/*", "./src/testSetup.ts"]
 }

@@ -9,9 +9,9 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-# Indent with 4 spaces
+# Indent with 2 spaces
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # JavaScript and TypeScript files
 [*.{js,ts}]
@@ -20,6 +20,3 @@ charset = utf-8
 # Markdown files
 [*.md]
 charset = utf-8
-
-# Indent with only two spaces
-indent_size = 2

@@ -1,6 +1,5 @@
 dist/
 src/index.js
 gulpfile.js
-firebaseFuncs.js
 *.config.js
 public/
