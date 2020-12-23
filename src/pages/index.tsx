@@ -1,25 +1,24 @@
 // Imports
-import { GetServerSideProps } from 'next';
-import React from 'react';
+import { GetServerSideProps, NextPage } from 'next';
 
 // Server-side redirection
 const getServerSideProps: GetServerSideProps = async ({ res }) => {
-    if (!res.headersSent) {
-        // Redirect to project listing
-        res.writeHead(301, {
-            Location: '/projects',
-        });
-        res.end();
-    }
+  if (!res.headersSent) {
+    // Redirect to project listing
+    res.writeHead(301, {
+      Location: '/projects',
+    });
+    res.end();
+  }
 
-    // Return empty props
-    return Promise.resolve({ props: {} });
+  // Return empty props
+  return Promise.resolve({ props: {} });
 };
 
 // Component
-const Index: React.FC = () => {
-    // Render nothing
-    return null;
+const Index: NextPage = () => {
+  // Render nothing
+  return null;
 };
 
 // Exports
