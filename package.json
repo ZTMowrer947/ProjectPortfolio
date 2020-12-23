@@ -2,10 +2,6 @@
   "name": "project-portfolio",
   "version": "3.0.0",
   "description": "Zack Mowrer's Portfolio",
-  "engines": {
-    "node": "10"
-  },
-  "main": "firebaseFuncs.js",
   "scripts": {
     "start": "next start",
     "build": "next build",
@@ -13,7 +9,7 @@
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "test": "jest",
     "typecheck": "tsc -noEmit",
-    "typecheck:watch": "yarpm typecheck -w"
+    "typecheck:watch": "tsc -noEmit -w"
   },
   "repository": {
     "type": "git",
@@ -34,9 +30,7 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
-    "rimraf": "^3.0.2",
-    "sass": "^1.26.9",
-    "yarpm": "^0.2.1"
+    "sass": "^1.26.9"
   },
   "devDependencies": {
     "@babel/cli": "~7.10.3",
