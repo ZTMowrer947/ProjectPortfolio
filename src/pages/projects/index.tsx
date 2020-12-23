@@ -6,8 +6,8 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import styled from 'styled-components';
 
-import Project from '../../models/Project';
-import ProjectService from '../../services/ProjectService';
+import ProjectApi from '@/api/ProjectApi';
+import Project from '@/models/Project';
 
 // Prop Types
 interface PropTypes {
@@ -16,7 +16,7 @@ interface PropTypes {
 
 // Static Prop Retrieval
 const getStaticProps: GetStaticProps<PropTypes> = async () => {
-  const projects = await ProjectService.getList();
+  const projects = await ProjectApi.getList();
 
   return {
     props: {

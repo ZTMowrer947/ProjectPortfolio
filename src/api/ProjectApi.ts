@@ -1,6 +1,6 @@
 // Imports
-import { projects as projectData } from '../../data.json';
-import Project from '../models/Project';
+import { projects as projectData } from '@/../data.json';
+import Project from '@/models/Project';
 
 // Project data
 const projects: Project[] = projectData.map((project) => ({
@@ -15,7 +15,7 @@ const projects: Project[] = projectData.map((project) => ({
 }));
 
 // Service
-class ProjectService {
+class ProjectApi {
   public static async getList(): Promise<Project[]> {
     return Promise.resolve(projects);
   }
@@ -26,4 +26,4 @@ class ProjectService {
 }
 
 // Exports
-export default ProjectService;
+export default ProjectApi;

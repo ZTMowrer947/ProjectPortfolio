@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 
-import Project from '../../models/Project';
-import ProjectService from '../../services/ProjectService';
+import ProjectApi from '@/api/ProjectApi';
+import Project from '@/models/Project';
 
 // Prop Types
 interface PropTypes {
@@ -28,7 +28,7 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
   const parsedId = Number.parseInt(id, 10);
 
   // Attempt to find project
-  const project = await ProjectService.get(parsedId);
+  const project = await ProjectApi.get(parsedId);
 
   // If project could not be found,
   if (!project) {
@@ -45,7 +45,7 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
 // Static Paths
 const getStaticPaths: GetStaticPaths = async () => {
   // Get project listing
-  const projects = await ProjectService.getList();
+  const projects = await ProjectApi.getList();
 
   // Create path data without fallback
   return {

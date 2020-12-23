@@ -1,17 +1,17 @@
 // Imports
 import { render } from '@testing-library/react';
 
-import ProjectDetail from '../../../pages/projects/[id]';
-import ProjectService from '../../../services/ProjectService';
+import ProjectApi from '@/api/ProjectApi';
+import ProjectDetail from '@/pages/projects/[id]';
 
 // Jest mocks
-jest.mock('../../../services/ProjectService');
+jest.mock('@/api/ProjectApi');
 
 // Test Suite
 describe('<ProjectDetail>', () => {
   it('should render project details', async () => {
     // Retrieve mock project data
-    const project = await ProjectService.get(1);
+    const project = await ProjectApi.get(1);
 
     if (!project) throw new Error('Could not retrieve project');
 

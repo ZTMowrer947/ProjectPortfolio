@@ -1,12 +1,12 @@
 // Imports
-import ProjectService from '../ProjectService';
+import ProjectApi from '../ProjectApi';
 
 // Test Suite
 describe('Project service', () => {
   describe('.getList', () => {
     it('should return a non-empty project listing', async () => {
       // Get project listing
-      const projects = await ProjectService.getList();
+      const projects = await ProjectApi.getList();
 
       // Expect array length to be nonzero
       expect(projects.length).toBeGreaterThan(0);
@@ -19,7 +19,7 @@ describe('Project service', () => {
       const id = 1;
 
       // Expect project to exist with given ID
-      return expect(ProjectService.get(id)).resolves.toBeDefined();
+      return expect(ProjectApi.get(id)).resolves.toBeDefined();
     });
 
     it('should return undefined if no project exists with the given ID', async () => {
@@ -27,7 +27,7 @@ describe('Project service', () => {
       const id = Number.MAX_SAFE_INTEGER;
 
       // Expect project NOT to exist with given ID
-      return expect(ProjectService.get(id)).resolves.toBeUndefined();
+      return expect(ProjectApi.get(id)).resolves.toBeUndefined();
     });
   });
 });

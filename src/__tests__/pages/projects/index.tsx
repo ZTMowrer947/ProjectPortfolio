@@ -1,17 +1,17 @@
 // Imports
 import { render } from '@testing-library/react';
 
-import Portfolio from '../../../pages/projects';
-import ProjectService from '../../../services/ProjectService';
+import ProjectApi from '@/api/ProjectApi';
+import Portfolio from '@/pages/projects';
 
 // Jest mocks
-jest.mock('../../../services/ProjectService');
+jest.mock('@/api/ProjectApi');
 
 // Test Suite
 describe('<Portfolio>', () => {
   it('should render a list of project items', async () => {
     // Get mock project listing
-    const projects = await ProjectService.getList();
+    const projects = await ProjectApi.getList();
 
     // Render component
     const { getByText, getAllByTestId } = render(

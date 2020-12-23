@@ -1,7 +1,7 @@
 // Imports
 import faker from 'faker';
 
-import Project from '../../models/Project';
+import Project from '@/models/Project';
 
 // Mock data
 const projects = Array.from(
@@ -19,7 +19,7 @@ const projects = Array.from(
 );
 
 // Mock Service
-class ProjectMockService {
+class ProjectMockApi {
   public static async getList(): Promise<Project[]> {
     return Promise.resolve(projects);
   }
@@ -30,4 +30,4 @@ class ProjectMockService {
 }
 
 // Exports
-export default ProjectMockService;
+export default ProjectMockApi;
