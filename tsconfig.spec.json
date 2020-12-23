@@ -5,7 +5,8 @@
         "baseUrl": ".",
         "paths": {
           "@/*": ["src/*"]
-        }
+        },
+        "jsx": "react-jsxdev"
     },
     "include": ["./src/**/__tests__/**/*", "next-env.d.ts", "**/__mocks__/**/*", "./src/testSetup.ts"]
 }
