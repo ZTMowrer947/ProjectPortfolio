@@ -14,6 +14,7 @@
     "prettier/@typescript-eslint",
     "prettier/react"
   ],
+  "plugins": ["simple-import-sort"],
   "rules": {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
@@ -38,7 +39,11 @@
     ],
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "sort-imports": "off",
+    "import/order": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
