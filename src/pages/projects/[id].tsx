@@ -1,5 +1,5 @@
 // Imports
-import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Col from 'react-bootstrap/Col';
@@ -135,4 +135,4 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
 
 // Exports
 export default ProjectDetail;
-export { getStaticProps, getStaticPaths };
+export { getStaticPaths, getStaticProps };

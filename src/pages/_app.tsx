@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // Imports
+import '../app.scss';
+
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { FC } from 'react';
 import Container from 'react-bootstrap/Container';
 
-import '../app.scss';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 

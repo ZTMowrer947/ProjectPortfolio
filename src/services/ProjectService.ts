@@ -1,6 +1,6 @@
 // Imports
-import Project from '../models/Project';
 import { projects as projectData } from '../../data.json';
+import Project from '../models/Project';
 
 // Project data
 const projects: Project[] = projectData.map((project) => ({
