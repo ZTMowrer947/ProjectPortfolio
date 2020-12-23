@@ -30,7 +30,7 @@ describe('<Portfolio>', () => {
       const project = projects[index];
 
       // Get project link, title, and landingImage
-      const projectLink = projectItem.querySelector('.project-link');
+      const projectLink = projectItem.querySelector('a');
       const projectTitle = getByText(project.name);
       const projectLandingImage = projectItem.querySelector('img');
 

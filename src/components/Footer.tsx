@@ -1,11 +1,18 @@
 // Imports
 import { FC } from 'react';
+import styled from 'styled-components';
+
+// Styled components
+const StyledFooter = styled.footer`
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+`;
 
 // Component
 const Footer: FC = () => {
   return (
     <>
-      <footer className="w-100 text-center text-dark">
+      <StyledFooter className="w-100 text-center text-dark">
         <p>
           Powered by{' '}
           <a
@@ -16,15 +23,7 @@ const Footer: FC = () => {
             Next.js
           </a>
         </p>
-      </footer>
-      <style jsx>
-        {`
-          footer {
-            font-family: 'Work Sans', sans-serif;
-            font-size: 0.75rem;
-          }
-        `}
-      </style>
+      </StyledFooter>
     </>
   );
 };

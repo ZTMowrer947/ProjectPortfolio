@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
+import styled from 'styled-components';
 
 import Project from '../../models/Project';
 import ProjectService from '../../services/ProjectService';
@@ -24,11 +25,17 @@ const getStaticProps: GetStaticProps<PropTypes> = async () => {
   };
 };
 
+// Styled components
+const ProjectTitle = styled.span`
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.25rem;
+`;
+
 // Component
 const Portfolio: NextPage<PropTypes> = ({ projects }) => {
   return (
     <>
-      <article className="portfolio-intro">
+      <article>
         <h1 className="display-4">Welcome!</h1>
         <p className="lead text-dark">
           Below is the many projects demonstrating my programming prowess,
@@ -38,7 +45,7 @@ const Portfolio: NextPage<PropTypes> = ({ projects }) => {
         </p>
       </article>
       <hr />
-      <article className="portfolio-index">
+      <article>
         <Row as="ul" className="list-unstyled">
           {projects.map((project) => (
             <Col
@@ -51,7 +58,7 @@ const Portfolio: NextPage<PropTypes> = ({ projects }) => {
             >
               <Link href={`/projects/${project.id}`} passHref>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="project-link text-decoration-none">
+                <a className="text-decoration-none">
                   <Image
                     fluid
                     thumbnail
@@ -59,23 +66,15 @@ const Portfolio: NextPage<PropTypes> = ({ projects }) => {
                     alt={`Landing image for "${project.name}"`}
                   />
 
-                  <span className="project-title mb-4 d-inline-block text-center text-uppercase w-100">
+                  <ProjectTitle className="project-title mb-4 d-inline-block text-center text-uppercase w-100">
                     {project.name}
-                  </span>
+                  </ProjectTitle>
                 </a>
               </Link>
             </Col>
           ))}
         </Row>
       </article>
-      <style jsx>
-        {`
-          .portfolio-index .project-title {
-            font-family: 'Work Sans', sans-serif;
-            font-size: 1.25rem;
-          }
-        `}
-      </style>
     </>
   );
 };
