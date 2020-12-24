@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
+import ReactMarkdown from 'react-markdown';
 
 import ProjectApi from '@/api/ProjectApi';
 import Project from '@/models/Project';
@@ -80,7 +81,9 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
         <Row>
           <Col xs={12} md={9}>
             <h1>{project.name}</h1>
-            <p className="lead text-dark">{project.description}</p>
+            <ReactMarkdown className="lead text-dark">
+              {project.description}
+            </ReactMarkdown>
           </Col>
           <Col xs={12} md={3}>
             <h6 className="text-uppercase">Technologies</h6>
