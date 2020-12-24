@@ -4,31 +4,11 @@ import { from, Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 import { accessToken, apiBaseUrl } from '@/config';
-import Project from '@/models/Project';
+import type { Asset, Image } from '@/models/api';
+import Project, { ApiProject } from '@/models/Project';
 
 // Helper types
 type ProjectLinkData = Pick<Project, 'id' | 'name' | 'landingImage'>;
-
-interface AssetReference {
-  sys: {
-    id: string;
-  };
-}
-
-interface Asset<Fields> extends AssetReference {
-  fields: Fields;
-}
-
-interface ApiProject extends Omit<Project, 'landingImage' | 'galleryImages'> {
-  landingImage: AssetReference;
-  galleryImages: AssetReference[];
-}
-
-type Image = Asset<{
-  file: {
-    url: string;
-  };
-}>;
 
 interface ProjectResponse {
   items: Asset<ApiProject>[];
@@ -141,4 +121,4 @@ class ProjectApi {
 
 // Exports
 export default ProjectApi;
-export type { ProjectLinkData };
+export type { ProjectLinkData, ProjectResponse };
