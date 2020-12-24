@@ -1,48 +1,37 @@
 // Imports
 import fetch from 'isomorphic-unfetch';
-import { defer, from, Observable, of } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
-import { projects as projectData } from '@/../data.json';
 import { accessToken, apiBaseUrl } from '@/config';
 import Project from '@/models/Project';
-
-// Project data
-const jsonProjects: Project[] = projectData.map((project) => ({
-  id: project.id,
-  name: project.project_name,
-  description: project.description,
-  technologiesUsed: project.technologies,
-  liveLink: project.live_link ?? null,
-  sourceLink: project.github_link,
-  landingImage: project.image_urls.landing,
-  galleryImages: project.image_urls.gallery,
-}));
 
 // Helper types
 type ProjectLinkData = Pick<Project, 'id' | 'name' | 'landingImage'>;
 
-interface ApiProject extends Omit<ProjectLinkData, 'landingImage'> {
-  landingImage: {
-    sys: {
-      id: string;
-    };
-  };
-}
-
-interface Image {
+interface AssetReference {
   sys: {
     id: string;
   };
-  fields: {
-    file: {
-      url: string;
-    };
-  };
 }
 
-interface ProjectListResponse {
-  items: { fields: ApiProject }[];
+interface Asset<Fields> extends AssetReference {
+  fields: Fields;
+}
+
+interface ApiProject extends Omit<Project, 'landingImage' | 'galleryImages'> {
+  landingImage: AssetReference;
+  galleryImages: AssetReference[];
+}
+
+type Image = Asset<{
+  file: {
+    url: string;
+  };
+}>;
+
+interface ProjectResponse {
+  items: Asset<ApiProject>[];
   includes: {
     Asset: Image[];
   };
@@ -63,7 +52,7 @@ class ProjectApi {
       )
     ).pipe(
       // Get response in JSON format
-      mergeMap((res) => from<Promise<ProjectListResponse>>(res.json())),
+      mergeMap((res) => from<Promise<ProjectResponse>>(res.json())),
 
       // Convert API data into application format
       map((data) => {
@@ -77,7 +66,7 @@ class ProjectApi {
           // Generate URL for landing image
           const landingImage = `https:${apiLandingImage.fields.file.url}`;
 
-          // Create project object
+          // Create project link object
           return {
             id: apiProject.fields.id,
             name: apiProject.fields.name,
@@ -93,7 +82,60 @@ class ProjectApi {
   }
 
   public static get(id: number): Observable<Project | undefined> {
-    return defer(() => of(jsonProjects.find((project) => project.id === id)));
+    // Fetch project data from CMS
+    const project$ = from(
+      fetch(`${apiBaseUrl}/entries?content_type=project&fields.id=${id}`, {
+        headers: {
+          authorization: `Bearer ${accessToken}`,
+        },
+      })
+    ).pipe(
+      // Get response in JSON format
+      mergeMap((res) => from<Promise<ProjectResponse>>(res.json())),
+
+      // Convert API data into application format
+      map((data) => {
+        // If project was not found, return undefined
+        if (data.items.length === 0) return undefined;
+
+        // Otherwise, retrieve project data
+        const apiProject = data.items[0];
+
+        // Search for image matching landing image ID
+        const apiLandingImage = data.includes.Asset.find(
+          (asset) => asset.sys.id === apiProject.fields.landingImage.sys.id
+        )!;
+
+        // Get gallery images matching image ID
+        const apiGalleryImages = data.includes.Asset.filter((asset) =>
+          apiProject.fields.galleryImages.some(
+            (img) => img.sys.id === asset.sys.id
+          )
+        );
+
+        // Generate URLs for images
+        const landingImage = `https:${apiLandingImage.fields.file.url}`;
+        const galleryImages = apiGalleryImages.map(
+          (img) => `https:${img.fields.file.url}`
+        );
+
+        // Generate project from API data
+        const project: Project = {
+          id: apiProject.fields.id,
+          name: apiProject.fields.name,
+          description: apiProject.fields.description,
+          technologiesUsed: apiProject.fields.technologiesUsed,
+          sourceLink: apiProject.fields.sourceLink,
+          liveLink: apiProject.fields.liveLink ?? null,
+          landingImage,
+          galleryImages,
+        };
+
+        return project;
+      })
+    );
+
+    return project$;
   }
 }
 
