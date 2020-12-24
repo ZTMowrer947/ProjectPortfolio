@@ -18,7 +18,7 @@ const spaceId = process.env.API_SPACE_ID;
 const accessToken = process.env.API_ACCESS_TOKEN;
 
 // Determine API subdomain
-const apiSubdomain = process.env.NODE_ENV === 'production' ? 'cdn' : 'preview';
+const apiSubdomain = process.env.API_PREVIEW ? 'preview' : 'cdn';
 
 // Determine full API base URL
 const apiBaseUrl = `https://${apiSubdomain}.contentful.com/spaces/${spaceId}/environments/master`;
