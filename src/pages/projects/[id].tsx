@@ -57,7 +57,7 @@ const getStaticPaths: GetStaticPaths = async () => {
         id: project.id.toString(),
       },
     })),
-    fallback: false,
+    fallback: 'blocking',
   };
 };
 
