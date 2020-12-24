@@ -1,6 +1,7 @@
-// Imports
+// Imports\
+import createHttpError from 'http-errors';
 import fetch from 'isomorphic-unfetch';
-import { from, Observable } from 'rxjs';
+import { from, Observable, throwError } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
 import { accessToken, apiBaseUrl } from '@/config';
@@ -32,7 +33,18 @@ class ProjectApi {
       )
     ).pipe(
       // Get response in JSON format
-      mergeMap((res) => from<Promise<ProjectResponse>>(res.json())),
+      mergeMap((res) => {
+        // If response was successful,
+        if (res.ok) {
+          // Serialize successful response as JSON
+          return from<Promise<ProjectResponse>>(res.json());
+        }
+
+        // Otherwise, create and throw HTTP error
+        return from<Promise<Record<string, unknown>>>(res.json()).pipe(
+          mergeMap((error) => throwError(createHttpError(res.status, error)))
+        );
+      }),
 
       // Convert API data into application format
       map((data) => {
@@ -71,7 +83,18 @@ class ProjectApi {
       })
     ).pipe(
       // Get response in JSON format
-      mergeMap((res) => from<Promise<ProjectResponse>>(res.json())),
+      mergeMap((res) => {
+        // If response was successful,
+        if (res.ok) {
+          // Serialize successful response as JSON
+          return from<Promise<ProjectResponse>>(res.json());
+        }
+
+        // Otherwise, create and throw HTTP error
+        return from<Promise<Record<string, unknown>>>(res.json()).pipe(
+          mergeMap((error) => throwError(createHttpError(res.status, error)))
+        );
+      }),
 
       // Convert API data into application format
       map((data) => {
