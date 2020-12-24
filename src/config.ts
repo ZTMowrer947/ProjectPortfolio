@@ -1,13 +1,21 @@
 // Environment settings
-const spaceId = process.env.API_SPACE_ID;
-const accessToken = process.env.API_ACCESS_TOKEN;
 
 // If environment values are empty, throw error
-if (!spaceId || !accessToken) {
+if (!process.env.API_SPACE_ID) {
   throw new Error(
-    'API_SPACE_ID and/or API_ACCESS_TOKEN environment variables are not set. Please verify these variables are set and re-run the app.'
+    'API_SPACE_ID environment variable is not set. Please verify the API variables are set and re-run the app.'
   );
 }
+
+if (!process.env.API_ACCESS_TOKEN) {
+  throw new Error(
+    'API_ACCESS_TOKEN environment variable is not set. Please verify the API variables are set and re-run the app.'
+  );
+}
+
+// Set API settings
+const spaceId = process.env.API_SPACE_ID;
+const accessToken = process.env.API_ACCESS_TOKEN;
 
 // Determine API subdomain
 const apiSubdomain = process.env.NODE_ENV === 'production' ? 'cdn' : 'preview';

@@ -6,12 +6,11 @@ import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import styled from 'styled-components';
 
-import ProjectApi from '@/api/ProjectApi';
-import Project from '@/models/Project';
+import ProjectApi, { ProjectLinkData } from '@/api/ProjectApi';
 
 // Prop Types
 interface PropTypes {
-  projects: Project[];
+  projects: ProjectLinkData[];
 }
 
 // Static Prop Retrieval
@@ -23,6 +22,7 @@ const getStaticProps: GetStaticProps<PropTypes> = async () => {
     props: {
       projects,
     },
+    revalidate: 1,
   };
 };
 
