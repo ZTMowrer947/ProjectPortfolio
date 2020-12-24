@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import ReactMarkdown from 'react-markdown';
+import { map } from 'rxjs/operators';
 
 import ProjectApi from '@/api/ProjectApi';
 import Project from '@/models/Project';
@@ -16,7 +17,7 @@ interface PropTypes {
 }
 
 // Static Prop Retrieval
-const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
+const getStaticProps: GetStaticProps = async ({ params }) => {
   // Get project ID
   const id = params?.id;
 
@@ -28,38 +29,41 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
   // Otherwise, parse as integer
   const parsedId = Number.parseInt(id, 10);
 
-  // TODO: Rewrite to properly use RxJS
-  // Attempt to find project
-  const project = await ProjectApi.get(parsedId).toPromise();
-
-  // If project could not be found,
-  if (!project) {
-    // Throw error
-    throw new Error(`Could not find project with provided ID`);
-  }
-
-  // Attach project data to props
-  return {
-    props: { project },
-    revalidate: 1,
-  };
+  return ProjectApi.get(parsedId)
+    .pipe(
+      map((project) => {
+        if (!project) {
+          return {
+            redirect: {
+              destination: '/projects',
+              permanent: false,
+            },
+            props: {},
+          };
+        }
+        return {
+          props: { project },
+          revalidate: 1,
+        };
+      })
+    )
+    .toPromise();
 };
 
 // Static Paths
 const getStaticPaths: GetStaticPaths = async () => {
-  // TODO: Rewrite to properly use RxJS
-  // Get project listing
-  const projects = await ProjectApi.getList().toPromise();
-
-  // Create path data without fallback
-  return {
-    paths: projects.map((project) => ({
-      params: {
-        id: project.id.toString(),
-      },
-    })),
-    fallback: 'blocking',
-  };
+  return ProjectApi.getList()
+    .pipe(
+      map((projects) => ({
+        paths: projects.map((project) => ({
+          params: {
+            id: project.id.toString(),
+          },
+        })),
+        fallback: 'blocking' as const,
+      }))
+    )
+    .toPromise();
 };
 
 // Component

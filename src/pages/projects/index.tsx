@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
+import { map } from 'rxjs/operators';
 import styled from 'styled-components';
 
 import ProjectApi, { ProjectLinkData } from '@/api/ProjectApi';
@@ -15,15 +16,16 @@ interface PropTypes {
 
 // Static Prop Retrieval
 const getStaticProps: GetStaticProps<PropTypes> = async () => {
-  // TODO: Rewrite to properly use RxJS
-  const projects = await ProjectApi.getList().toPromise();
-
-  return {
-    props: {
-      projects,
-    },
-    revalidate: 1,
-  };
+  return ProjectApi.getList()
+    .pipe(
+      map((projects) => ({
+        props: {
+          projects,
+        },
+        revalidate: 1,
+      }))
+    )
+    .toPromise();
 };
 
 // Styled components
