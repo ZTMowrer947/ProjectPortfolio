@@ -62,7 +62,7 @@ const Portfolio: NextPage<PropTypes> = ({ projects }) => {
                   <Image
                     fluid
                     thumbnail
-                    src={project.landingImageUrl}
+                    src={project.landingImage}
                     alt={`Landing image for "${project.name}"`}
                   />
 

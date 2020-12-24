@@ -10,11 +10,11 @@ const projects = Array.from(
     id: index + 1,
     name: faker.random.words(3),
     description: faker.lorem.paragraph(),
-    technologies: Array.from({ length: 3 }, () => faker.random.word()),
+    technologiesUsed: Array.from({ length: 3 }, () => faker.random.word()),
     liveLink: faker.internet.url(),
-    githubLink: faker.internet.url(),
-    landingImageUrl: faker.image.imageUrl(),
-    galleryImageUrls: Array.from({ length: 3 }, () => faker.image.imageUrl()),
+    sourceLink: faker.internet.url(),
+    landingImage: faker.image.imageUrl(),
+    galleryImages: Array.from({ length: 3 }, () => faker.image.imageUrl()),
   })
 );
 

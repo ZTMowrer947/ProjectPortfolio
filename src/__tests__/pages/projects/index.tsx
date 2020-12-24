@@ -48,10 +48,7 @@ describe('<Portfolio>', () => {
       );
 
       // Expect image source to match landing image URL for project
-      expect(projectLandingImage).toHaveAttribute(
-        'src',
-        project.landingImageUrl
-      );
+      expect(projectLandingImage).toHaveAttribute('src', project.landingImage);
 
       /* eslint-enable @typescript-eslint/no-unsafe-call */
     });

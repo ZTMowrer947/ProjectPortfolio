@@ -3,11 +3,11 @@ interface Project {
   id: number;
   name: string;
   description: string;
-  technologies: string[];
+  technologiesUsed: string[];
   liveLink: string | null;
-  githubLink: string;
-  landingImageUrl: string;
-  galleryImageUrls: string[];
+  sourceLink: string;
+  landingImage: string;
+  galleryImages: string[];
 }
 
 // Exports

@@ -25,23 +25,23 @@ describe('<ProjectDetail>', () => {
     const projectDescription = queryByText(project.description);
     const projectTechnologies = queryAllByTestId('project-technology');
     const projectLiveLink = queryByTestId('live-link');
-    const projectGithubLink = queryByTestId('gh-link');
+    const projectSourceLink = queryByTestId('gh-link');
     const projectGalleryImages = queryAllByTestId('gallery-image');
 
     // Expect all single elements to exist in the docment
     expect(projectHeading).toBeInTheDocument();
     expect(projectDescription).toBeInTheDocument();
     expect(projectLiveLink).toBeInTheDocument();
-    expect(projectGithubLink).toBeInTheDocument();
+    expect(projectSourceLink).toBeInTheDocument();
 
     // Expect technology and gallery images to match length of corresponding project items
-    expect(projectTechnologies).toHaveLength(project.technologies.length);
-    expect(projectGalleryImages).toHaveLength(project.galleryImageUrls.length);
+    expect(projectTechnologies).toHaveLength(project.technologiesUsed.length);
+    expect(projectGalleryImages).toHaveLength(project.galleryImages.length);
 
     // For each technology item,
     projectTechnologies.forEach((techItem, index) => {
       // Get corresponding technology
-      const technologies = project.technologies[index];
+      const technologies = project.technologiesUsed[index];
 
       // Expect each technology item to contain name of technology
       expect(techItem).toHaveTextContent(technologies);
@@ -50,7 +50,7 @@ describe('<ProjectDetail>', () => {
     // For each gallery image,
     projectGalleryImages.forEach((galleryImage, index) => {
       // Get corresponding expected URL
-      const galleryImageUrl = project.galleryImageUrls[index];
+      const galleryImageUrl = project.galleryImages[index];
 
       // Expect gallery image to have correct source URL
       expect(galleryImage).toHaveAttribute('src', galleryImageUrl);

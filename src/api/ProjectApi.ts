@@ -7,11 +7,11 @@ const projects: Project[] = projectData.map((project) => ({
   id: project.id,
   name: project.project_name,
   description: project.description,
-  technologies: project.technologies,
+  technologiesUsed: project.technologies,
   liveLink: project.live_link ?? null,
-  githubLink: project.github_link,
-  landingImageUrl: project.image_urls.landing,
-  galleryImageUrls: project.image_urls.gallery,
+  sourceLink: project.github_link,
+  landingImage: project.image_urls.landing,
+  galleryImages: project.image_urls.gallery,
 }));
 
 // Service

@@ -83,7 +83,7 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
           <Col xs={12} md={3}>
             <h6 className="text-uppercase">Technologies</h6>
             <ul>
-              {project.technologies.map((technology) => (
+              {project.technologiesUsed.map((technology) => (
                 <li key={technology} data-testid="project-technology">
                   {technology}
                 </li>
@@ -101,7 +101,7 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
               </a>
             )}
             <a
-              href={project.githubLink}
+              href={project.sourceLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-dark btn-block text-nowrap"
@@ -112,7 +112,7 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
           </Col>
         </Row>
         <hr />
-        {project.galleryImageUrls.map((imageUrl, index) => {
+        {project.galleryImages.map((imageUrl, index) => {
           const urlFragments = imageUrl.split('/');
           const filename = urlFragments[urlFragments.length - 1];
           const key = `${project.id}-${filename.replace(/\..*$/, '')}-${index}`;
