@@ -41,6 +41,7 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
   // Attach project data to props
   return {
     props: { project },
+    revalidate: 1,
   };
 };
 
