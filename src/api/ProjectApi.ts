@@ -1,4 +1,6 @@
 // Imports
+import { defer, Observable, of } from 'rxjs';
+
 import { projects as projectData } from '@/../data.json';
 import Project from '@/models/Project';
 
@@ -16,12 +18,12 @@ const projects: Project[] = projectData.map((project) => ({
 
 // Service
 class ProjectApi {
-  public static async getList(): Promise<Project[]> {
-    return Promise.resolve(projects);
+  public static getList(): Observable<Project[]> {
+    return defer(() => of(projects));
   }
 
-  public static async get(id: number): Promise<Project | undefined> {
-    return Promise.resolve(projects.find((project) => project.id === id));
+  public static get(id: number): Observable<Project | undefined> {
+    return defer(() => of(projects.find((project) => project.id === id)));
   }
 }
 

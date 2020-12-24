@@ -11,7 +11,7 @@ jest.mock('@/api/ProjectApi');
 describe('<Portfolio>', () => {
   it('should render a list of project items', async () => {
     // Get mock project listing
-    const projects = await ProjectApi.getList();
+    const projects = await ProjectApi.getList().toPromise();
 
     // Render component
     const { getByText, getAllByTestId } = render(

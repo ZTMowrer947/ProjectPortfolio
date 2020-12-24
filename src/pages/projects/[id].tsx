@@ -27,8 +27,9 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
   // Otherwise, parse as integer
   const parsedId = Number.parseInt(id, 10);
 
+  // TODO: Rewrite to properly use RxJS
   // Attempt to find project
-  const project = await ProjectApi.get(parsedId);
+  const project = await ProjectApi.get(parsedId).toPromise();
 
   // If project could not be found,
   if (!project) {
@@ -44,8 +45,9 @@ const getStaticProps: GetStaticProps<PropTypes> = async ({ params }) => {
 
 // Static Paths
 const getStaticPaths: GetStaticPaths = async () => {
+  // TODO: Rewrite to properly use RxJS
   // Get project listing
-  const projects = await ProjectApi.getList();
+  const projects = await ProjectApi.getList().toPromise();
 
   // Create path data without fallback
   return {

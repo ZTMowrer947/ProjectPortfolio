@@ -11,7 +11,7 @@ jest.mock('@/api/ProjectApi');
 describe('<ProjectDetail>', () => {
   it('should render project details', async () => {
     // Retrieve mock project data
-    const project = await ProjectApi.get(1);
+    const project = await ProjectApi.get(1).toPromise();
 
     if (!project) throw new Error('Could not retrieve project');
 

@@ -16,7 +16,8 @@ interface PropTypes {
 
 // Static Prop Retrieval
 const getStaticProps: GetStaticProps<PropTypes> = async () => {
-  const projects = await ProjectApi.getList();
+  // TODO: Rewrite to properly use RxJS
+  const projects = await ProjectApi.getList().toPromise();
 
   return {
     props: {
