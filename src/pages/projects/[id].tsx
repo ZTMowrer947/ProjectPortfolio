@@ -105,7 +105,7 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-dark btn-block text-nowrap"
-                data-testid="live-link"
+                aria-label="live-link"
               >
                 Live Demo
               </a>
@@ -115,7 +115,7 @@ const ProjectDetail: NextPage<PropTypes> = ({ project }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-dark btn-block text-nowrap"
-              data-testid="gh-link"
+              aria-label="source-link"
             >
               Github Repo
             </a>

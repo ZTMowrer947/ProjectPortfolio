@@ -1,56 +1,98 @@
 // Imports
 import { render } from '@testing-library/react';
+import TestRenderer from 'react-test-renderer';
 
-import ProjectApi from '@/api/ProjectApi';
+import Project from '@/models/Project';
 import ProjectDetail from '@/pages/projects/[id]';
 
-// Jest mocks
-jest.mock('@/api/ProjectApi');
+// Test data
+const projectA: Project = {
+  id: 1,
+  name: 'Project #1',
+  description: 'Lorem ipsum dolor sit amet.',
+  technologiesUsed: ['Jest'],
+  sourceLink: 'http://example.com',
+  liveLink: 'http://example.com',
+  landingImage: 'https://place-hold.it/640x480',
+  galleryImages: [
+    'https://place-hold.it/640x480',
+    'https://place-hold.it/640x480',
+    'https://place-hold.it/640x480',
+  ],
+};
+
+const projectB: Project = {
+  id: 2,
+  name: 'Project #2',
+  description: 'Lorem ipsum dolor sit amet.',
+  technologiesUsed: ['Jest'],
+  sourceLink: 'http://example.com',
+  liveLink: null,
+  landingImage: 'https://place-hold.it/640x480',
+  galleryImages: [
+    'https://place-hold.it/640x480',
+    'https://place-hold.it/640x480',
+    'https://place-hold.it/640x480',
+  ],
+};
 
 // Test Suite
-describe('<ProjectDetail>', () => {
-  it('should render project details', async () => {
-    // Retrieve mock project data
-    const project = await ProjectApi.get(1).toPromise();
+describe('ProjectDetail page', () => {
+  it('should render all the details of a given project, including its live link if it has one', () => {
+    // Create test render
+    const renderer = TestRenderer.create(<ProjectDetail project={projectA} />);
 
-    if (!project) throw new Error('Could not retrieve project');
+    // Expect render to match associated snapshot
+    expect(renderer.toJSON()).toMatchSnapshot();
+  });
 
+  it("should render all the details of a given project, save for its live link if it doesn't have one", () => {
+    // Create test render
+    const renderer = TestRenderer.create(<ProjectDetail project={projectB} />);
+
+    // Expect render to match associated snapshot
+    expect(renderer.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render project details', () => {
     // Render component
-    const { queryByText, queryByTestId, queryAllByTestId } = render(
-      <ProjectDetail project={project} />
+    const { getAllByAltText, getAllByTestId, getByRole, queryByText } = render(
+      <ProjectDetail project={projectA} />
     );
 
     // Retrieve project detail elements
-    const projectHeading = queryByText(project.name);
-    const projectDescription = queryByText(project.description);
-    const projectTechnologies = queryAllByTestId('project-technology');
-    const projectLiveLink = queryByTestId('live-link');
-    const projectSourceLink = queryByTestId('gh-link');
-    const projectGalleryImages = queryAllByTestId('gallery-image');
+    const heading = queryByText(projectA.name);
+    const description = queryByText(projectA.description);
+    const technologyItems = getAllByTestId('project-technology');
+    const liveLink = getByRole('link', { name: 'live-link' });
+    const sourceLink = getByRole('link', { name: 'live-link' });
+    const galleryImages = getAllByAltText(/Gallery image for/);
 
-    // Expect all single elements to exist in the docment
-    expect(projectHeading).toBeInTheDocument();
-    expect(projectDescription).toBeInTheDocument();
-    expect(projectLiveLink).toBeInTheDocument();
-    expect(projectSourceLink).toBeInTheDocument();
+    // Expect header and description elements to exist in the docment
+    expect(heading).toBeInTheDocument();
+    expect(description).toBeInTheDocument();
 
     // Expect technology and gallery images to match length of corresponding project items
-    expect(projectTechnologies).toHaveLength(project.technologiesUsed.length);
-    expect(projectGalleryImages).toHaveLength(project.galleryImages.length);
+    expect(technologyItems).toHaveLength(projectA.technologiesUsed.length);
+    expect(galleryImages).toHaveLength(projectA.galleryImages.length);
 
     // For each technology item,
-    projectTechnologies.forEach((techItem, index) => {
+    technologyItems.forEach((techItem, index) => {
       // Get corresponding technology
-      const technologies = project.technologiesUsed[index];
+      const technologies = projectA.technologiesUsed[index];
 
       // Expect each technology item to contain name of technology
       expect(techItem).toHaveTextContent(technologies);
     });
 
+    // Expect live and source links to have correct hrefs
+    expect(liveLink).toHaveAttribute('href', projectA.liveLink);
+    expect(sourceLink).toHaveAttribute('href', projectA.sourceLink);
+
     // For each gallery image,
-    projectGalleryImages.forEach((galleryImage, index) => {
+    galleryImages.forEach((galleryImage, index) => {
       // Get corresponding expected URL
-      const galleryImageUrl = project.galleryImages[index];
+      const galleryImageUrl = projectA.galleryImages[index];
 
       // Expect gallery image to have correct source URL
       expect(galleryImage).toHaveAttribute('src', galleryImageUrl);
