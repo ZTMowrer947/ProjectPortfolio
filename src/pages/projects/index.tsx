@@ -61,7 +61,10 @@ const Portfolio: NextPage<PropTypes> = ({ projects }) => {
             >
               <Link href={`/projects/${project.id}`} passHref>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="text-decoration-none">
+                <a
+                  className="text-decoration-none"
+                  aria-label={`project-${project.id}`}
+                >
                   <Image
                     fluid
                     thumbnail

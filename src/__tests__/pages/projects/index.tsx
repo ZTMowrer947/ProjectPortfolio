@@ -1,56 +1,51 @@
 // Imports
 import { render } from '@testing-library/react';
+import TestRenderer from 'react-test-renderer';
 
-import ProjectApi from '@/api/ProjectApi';
+import { ProjectLinkData } from '@/api/ProjectApi';
 import Portfolio from '@/pages/projects';
 
-// Jest mocks
-jest.mock('@/api/ProjectApi');
+// Test data
+const projects: ProjectLinkData[] = Array.from({ length: 3 }, (v, index) => ({
+  id: index + 1,
+  name: `Project #${index + 1}`,
+  landingImage: 'https://place-hold.it/640x480',
+}));
 
 // Test Suite
-describe('<Portfolio>', () => {
-  it('should render a list of project items', async () => {
-    // Get mock project listing
-    const projects = await ProjectApi.getList().toPromise();
+describe('Portfolio page', () => {
+  it('should render a list of links to projects', () => {
+    // Create test render
+    const renderer = TestRenderer.create(<Portfolio projects={projects} />);
 
+    // Expect render to match associated snapshot
+    expect(renderer.toJSON()).toMatchSnapshot();
+  });
+
+  it('should render the correct components for each project', () => {
     // Render component
-    const { getByText, getAllByTestId } = render(
+    const { getByAltText, getByRole, queryByText } = render(
       <Portfolio projects={projects} />
     );
 
-    // Get all project items
-    const projectItems = getAllByTestId('project-item');
+    // For each project,
+    projects.forEach((project) => {
+      // Get project link, title, and landing image
+      const link = getByRole('link', { name: `project-${project.id}` });
+      const title = queryByText(project.name);
+      const landingImage = getByAltText(`Landing image for "${project.name}"`);
 
-    // Expect there to be a project item for each project
-    expect(projectItems).toHaveLength(projects.length);
-
-    // For each project item,
-    projectItems.forEach((projectItem, index) => {
-      // Get corresponding project
-      const project = projects[index];
-
-      // Get project link, title, and landingImage
-      const projectLink = projectItem.querySelector('a');
-      const projectTitle = getByText(project.name);
-      const projectLandingImage = projectItem.querySelector('img');
-
-      /* eslint-disable @typescript-eslint/no-unsafe-call */
-
-      // Expect all three to exist and be in the document
-      expect(projectLink).toBeInTheDocument();
-      expect(projectTitle).toBeInTheDocument();
-      expect(projectLandingImage).toBeInTheDocument();
+      // Expect project title to have been found
+      expect(title).not.toBeNull();
 
       // Expect link href to end with project ID
-      expect(projectLink).toHaveAttribute(
+      expect(link).toHaveAttribute(
         'href',
         expect.stringMatching(new RegExp(`${project.id}$`))
       );
 
       // Expect image source to match landing image URL for project
-      expect(projectLandingImage).toHaveAttribute('src', project.landingImage);
-
-      /* eslint-enable @typescript-eslint/no-unsafe-call */
+      expect(landingImage).toHaveAttribute('src', project.landingImage);
     });
   });
 });

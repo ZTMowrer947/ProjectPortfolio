@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Portfolio page should render a list of links to projects 1`] = `
+Array [
+  <article>
+    <h1
+      className="display-4"
+    >
+      Welcome!
+    </h1>
+    <p
+      className="lead text-dark"
+    >
+      Below is the many projects demonstrating my programming prowess, primarily in Full-Stack JavaScript. Many of the below projects also have live demos, the links to which are provided in the detail page for such projects.
+    </p>
+  </article>,
+  <hr />,
+  <article>
+    <ul
+      className="list-unstyled row"
+    >
+      <li
+        className="col-lg-4 col-md-6 col-12"
+        data-testid="project-item"
+      >
+        <a
+          aria-label="project-1"
+          className="text-decoration-none"
+          href="/projects/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <img
+            alt="Landing image for \\"Project #1\\""
+            className="img-fluid img-thumbnail"
+            src="https://place-hold.it/640x480"
+          />
+          <span
+            className="sc-bdfBwQ dHJqBU project-title mb-4 d-inline-block text-center text-uppercase w-100"
+          >
+            Project #1
+          </span>
+        </a>
+      </li>
+      <li
+        className="col-lg-4 col-md-6 col-12"
+        data-testid="project-item"
+      >
+        <a
+          aria-label="project-2"
+          className="text-decoration-none"
+          href="/projects/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <img
+            alt="Landing image for \\"Project #2\\""
+            className="img-fluid img-thumbnail"
+            src="https://place-hold.it/640x480"
+          />
+          <span
+            className="sc-bdfBwQ dHJqBU project-title mb-4 d-inline-block text-center text-uppercase w-100"
+          >
+            Project #2
+          </span>
+        </a>
+      </li>
+      <li
+        className="col-lg-4 col-md-6 col-12"
+        data-testid="project-item"
+      >
+        <a
+          aria-label="project-3"
+          className="text-decoration-none"
+          href="/projects/3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <img
+            alt="Landing image for \\"Project #3\\""
+            className="img-fluid img-thumbnail"
+            src="https://place-hold.it/640x480"
+          />
+          <span
+            className="sc-bdfBwQ dHJqBU project-title mb-4 d-inline-block text-center text-uppercase w-100"
+          >
+            Project #3
+          </span>
+        </a>
+      </li>
+    </ul>
+  </article>,
+]
+`;
