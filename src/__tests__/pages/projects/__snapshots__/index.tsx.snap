@@ -24,9 +24,9 @@ Array [
         data-testid="project-item"
       >
         <a
-          aria-label="project-945bc390-1a6e-40c5-8c22-5a2011aa975c"
+          aria-label="project-2b6945cc-7906-4094-a407-cc6fa2cf6013"
           className="text-decoration-none"
-          href="/projects/945bc390-1a6e-40c5-8c22-5a2011aa975c"
+          href="/projects/2b6945cc-7906-4094-a407-cc6fa2cf6013"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -47,9 +47,9 @@ Array [
         data-testid="project-item"
       >
         <a
-          aria-label="project-98ab5f5f-7284-4101-88d9-856d4d584af0"
+          aria-label="project-2c6d76bc-2975-4c30-ae50-1b6141acb291"
           className="text-decoration-none"
-          href="/projects/98ab5f5f-7284-4101-88d9-856d4d584af0"
+          href="/projects/2c6d76bc-2975-4c30-ae50-1b6141acb291"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -70,9 +70,9 @@ Array [
         data-testid="project-item"
       >
         <a
-          aria-label="project-cdbcf90e-d02d-4735-9b91-4313bcb9e642"
+          aria-label="project-01581072-42d4-4d3f-afc6-9e4adf0c2b5b"
           className="text-decoration-none"
-          href="/projects/cdbcf90e-d02d-4735-9b91-4313bcb9e642"
+          href="/projects/01581072-42d4-4d3f-afc6-9e4adf0c2b5b"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >

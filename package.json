@@ -27,7 +27,6 @@
     "core-js": "^3.8.1",
     "cross-env": "^7.0.2",
     "http-errors": "^1.8.0",
-    "isomorphic-unfetch": "^3.1.0",
     "next": "^10.0.4",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
@@ -36,7 +35,8 @@
     "regenerator-runtime": "^0.13.5",
     "rxjs": "^6.6.3",
     "sass": "^1.26.9",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "universal-rxjs-ajax": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "~7.12.10",

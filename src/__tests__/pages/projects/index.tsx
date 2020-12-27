@@ -1,14 +1,19 @@
 // Imports
 import { render } from '@testing-library/react';
-import { random } from 'faker';
 import TestRenderer from 'react-test-renderer';
 
 import { ProjectLinkData } from '@/api/ProjectApi';
 import Portfolio from '@/pages/projects';
 
 // Test data
+const ids = [
+  '2b6945cc-7906-4094-a407-cc6fa2cf6013',
+  '2c6d76bc-2975-4c30-ae50-1b6141acb291',
+  '01581072-42d4-4d3f-afc6-9e4adf0c2b5b',
+];
+
 const projects: ProjectLinkData[] = Array.from({ length: 3 }, (v, index) => ({
-  id: random.uuid(),
+  id: ids[index],
   name: `Project #${index + 1}`,
   landingImage: 'https://place-hold.it/640x480',
 }));

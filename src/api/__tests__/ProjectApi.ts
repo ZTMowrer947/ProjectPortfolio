@@ -125,7 +125,11 @@ const server = setupServer(
       body.includes.Asset.push(...images);
     }
 
-    return res(ctx.status(200), ctx.json(body));
+    return res(
+      ctx.status(200),
+      ctx.set('Access-Control-Allow-Origin', '*'),
+      ctx.json(body)
+    );
   })
 );
 
@@ -145,9 +149,7 @@ describe('Project service', () => {
       }));
 
       // Expect API service to resolve to expected result
-      await expect(ProjectApi.getList().toPromise()).resolves.toStrictEqual(
-        expected
-      );
+      await expect(ProjectApi.getList().toPromise()).resolves.toEqual(expected);
     });
   });
 
@@ -158,7 +160,7 @@ describe('Project service', () => {
       const { id } = projects[randomIndex];
 
       // Expect API service to resolve to matching project data
-      await expect(ProjectApi.get(id).toPromise()).resolves.toStrictEqual(
+      await expect(ProjectApi.get(id).toPromise()).resolves.toEqual(
         projects[randomIndex]
       );
     });

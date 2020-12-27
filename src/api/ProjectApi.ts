@@ -1,8 +1,7 @@
 // Imports\
-import createHttpError from 'http-errors';
-import fetch from 'isomorphic-unfetch';
-import { from, Observable, throwError } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { request } from 'universal-rxjs-ajax';
 
 import { accessToken, apiBaseUrl } from '@/config';
 import type { Asset, Image } from '@/models/api';
@@ -22,29 +21,16 @@ interface ProjectResponse {
 class ProjectApi {
   public static getList(): Observable<ProjectLinkData[]> {
     // Fetch project data from CMS
-    const projects$ = from(
-      fetch(
-        `${apiBaseUrl}/entries?content_type=project&select=sys.id,fields.name,fields.landingImage&order=sys.createdAt`,
-        {
-          headers: {
-            authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
-    ).pipe(
-      // Get response in JSON format
-      mergeMap((res) => {
-        // If response was successful,
-        if (res.ok) {
-          // Serialize successful response as JSON
-          return from<Promise<ProjectResponse>>(res.json());
-        }
-
-        // Otherwise, create and throw HTTP error
-        return from<Promise<Record<string, unknown>>>(res.json()).pipe(
-          mergeMap((error) => throwError(createHttpError(res.status, error)))
-        );
-      }),
+    const projects$ = request({
+      url: `${apiBaseUrl}/entries?content_type=project&select=sys.id,fields.name,fields.landingImage&order=sys.createdAt`,
+      method: 'GET',
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+      responseType: 'json',
+    }).pipe(
+      // Get response in JSON format with correct typings
+      map(({ response }) => response as ProjectResponse),
 
       // Convert API data into application format
       map((data) => {
@@ -75,26 +61,16 @@ class ProjectApi {
 
   public static get(id: string): Observable<Project | undefined> {
     // Fetch project data from CMS
-    const project$ = from(
-      fetch(`${apiBaseUrl}/entries?content_type=project&sys.id=${id}`, {
-        headers: {
-          authorization: `Bearer ${accessToken}`,
-        },
-      })
-    ).pipe(
-      // Get response in JSON format
-      mergeMap((res) => {
-        // If response was successful,
-        if (res.ok) {
-          // Serialize successful response as JSON
-          return from<Promise<ProjectResponse>>(res.json());
-        }
-
-        // Otherwise, create and throw HTTP error
-        return from<Promise<Record<string, unknown>>>(res.json()).pipe(
-          mergeMap((error) => throwError(createHttpError(res.status, error)))
-        );
-      }),
+    const project$ = request({
+      url: `${apiBaseUrl}/entries?content_type=project&sys.id=${id}`,
+      method: 'GET',
+      headers: {
+        authorization: `Bearer ${accessToken}`,
+      },
+      responseType: 'json',
+    }).pipe(
+      // Get response in JSON format with correct typings
+      map(({ response }) => response as ProjectResponse),
 
       // Convert API data into application format
       map((data) => {
