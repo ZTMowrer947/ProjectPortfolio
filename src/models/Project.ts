@@ -3,7 +3,7 @@ import type { AssetReference } from './api';
 
 // Interface
 interface Project {
-  id: number;
+  id: string;
   name: string;
   description: string;
   technologiesUsed: string[];
@@ -14,7 +14,8 @@ interface Project {
 }
 
 // API types
-interface ApiProject extends Omit<Project, 'landingImage' | 'galleryImages'> {
+interface ApiProject
+  extends Omit<Project, 'id' | 'landingImage' | 'galleryImages'> {
   landingImage: AssetReference;
   galleryImages: AssetReference[];
 }

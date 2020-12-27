@@ -17,19 +17,24 @@ interface PropTypes {
 }
 
 // Static Prop Retrieval
-const getStaticProps: GetStaticProps = async ({ params }) => {
+const getStaticProps: GetStaticProps<Partial<PropTypes>> = async ({
+  params,
+}) => {
   // Get project ID
   const id = params?.id;
 
-  // If ID is not a string, or is not a number,
-  if (typeof id !== 'string' || Number.isNaN(Number.parseInt(id, 10))) {
-    throw new Error('ID must be a numeric value');
+  // If ID is not a string,
+  if (typeof id !== 'string') {
+    // Redirect to project listing
+    return {
+      redirect: {
+        destination: '/projects',
+        permanent: false,
+      },
+    };
   }
 
-  // Otherwise, parse as integer
-  const parsedId = Number.parseInt(id, 10);
-
-  return ProjectApi.get(parsedId)
+  return ProjectApi.get(id)
     .pipe(
       map((project) => {
         if (!project) {
@@ -38,7 +43,6 @@ const getStaticProps: GetStaticProps = async ({ params }) => {
               destination: '/projects',
               permanent: false,
             },
-            props: {},
           };
         }
         return {

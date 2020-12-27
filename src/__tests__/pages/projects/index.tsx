@@ -1,5 +1,6 @@
 // Imports
 import { render } from '@testing-library/react';
+import { random } from 'faker';
 import TestRenderer from 'react-test-renderer';
 
 import { ProjectLinkData } from '@/api/ProjectApi';
@@ -7,7 +8,7 @@ import Portfolio from '@/pages/projects';
 
 // Test data
 const projects: ProjectLinkData[] = Array.from({ length: 3 }, (v, index) => ({
-  id: index + 1,
+  id: random.uuid(),
   name: `Project #${index + 1}`,
   landingImage: 'https://place-hold.it/640x480',
 }));

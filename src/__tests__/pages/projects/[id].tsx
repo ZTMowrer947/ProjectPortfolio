@@ -7,7 +7,7 @@ import ProjectDetail from '@/pages/projects/[id]';
 
 // Test data
 const projectA: Project = {
-  id: 1,
+  id: 'dc0e9ad6-e1c2-4d04-89c4-7181897848dc',
   name: 'Project #1',
   description: 'Lorem ipsum dolor sit amet.',
   technologiesUsed: ['Jest'],
@@ -22,7 +22,7 @@ const projectA: Project = {
 };
 
 const projectB: Project = {
-  id: 2,
+  id: '0b701ed7-ec0f-418c-a781-84370d1a9a08',
   name: 'Project #2',
   description: 'Lorem ipsum dolor sit amet.',
   technologiesUsed: ['Jest'],

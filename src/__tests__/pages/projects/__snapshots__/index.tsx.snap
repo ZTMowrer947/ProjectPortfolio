@@ -24,9 +24,9 @@ Array [
         data-testid="project-item"
       >
         <a
-          aria-label="project-1"
+          aria-label="project-945bc390-1a6e-40c5-8c22-5a2011aa975c"
           className="text-decoration-none"
-          href="/projects/1"
+          href="/projects/945bc390-1a6e-40c5-8c22-5a2011aa975c"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -47,9 +47,9 @@ Array [
         data-testid="project-item"
       >
         <a
-          aria-label="project-2"
+          aria-label="project-98ab5f5f-7284-4101-88d9-856d4d584af0"
           className="text-decoration-none"
-          href="/projects/2"
+          href="/projects/98ab5f5f-7284-4101-88d9-856d4d584af0"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -70,9 +70,9 @@ Array [
         data-testid="project-item"
       >
         <a
-          aria-label="project-3"
+          aria-label="project-cdbcf90e-d02d-4735-9b91-4313bcb9e642"
           className="text-decoration-none"
-          href="/projects/3"
+          href="/projects/cdbcf90e-d02d-4735-9b91-4313bcb9e642"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >

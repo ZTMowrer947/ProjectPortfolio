@@ -12,8 +12,8 @@ import ProjectApi, { ProjectResponse } from '../ProjectApi';
 // Mock project data
 const projects = Array.from(
   { length: 10 },
-  (_, index): Project => ({
-    id: index + 1,
+  (): Project => ({
+    id: random.uuid(),
     name: random.words(3),
     description: lorem.paragraph(),
     technologiesUsed: Array.from({ length: 3 }, () => random.word()),
@@ -57,7 +57,6 @@ function projectToApiProject(project: Project) {
   }));
 
   const apiProject: ApiProject = {
-    id: project.id,
     name: project.name,
     description: project.description,
     technologiesUsed: project.technologiesUsed,
@@ -90,17 +89,17 @@ const server = setupServer(
       },
     };
 
-    if (searchParams.has('fields.id')) {
-      const id = searchParams.get('fields.id');
+    if (searchParams.has('sys.id')) {
+      const id = searchParams.get('sys.id');
 
-      const project = projects.find((proj) => proj.id.toString(10) === id);
+      const project = projects.find((proj) => proj.id === id);
 
       if (project) {
         const { images, apiProject } = projectToApiProject(project);
 
         const item = {
           sys: {
-            id: random.uuid(),
+            id: project.id,
           },
           fields: apiProject,
         };
@@ -113,9 +112,9 @@ const server = setupServer(
         projectToApiProject(project)
       );
 
-      const items = apiProjectData.map(({ apiProject }) => ({
+      const items = apiProjectData.map(({ apiProject }, index) => ({
         sys: {
-          id: random.uuid(),
+          id: projects[index].id,
         },
         fields: apiProject,
       }));
@@ -166,7 +165,7 @@ describe('Project service', () => {
 
     it('should return undefined if no project exists with the given ID', async () => {
       // Define ID which does not exist in project data
-      const id = projects.length * 2;
+      const id = random.uuid().repeat(2);
 
       // Expect API service to resolve to undefined
       await expect(ProjectApi.get(id).toPromise()).resolves.toBeUndefined();

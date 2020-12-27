@@ -24,7 +24,7 @@ class ProjectApi {
     // Fetch project data from CMS
     const projects$ = from(
       fetch(
-        `${apiBaseUrl}/entries?content_type=project&select=fields.id,fields.name,fields.landingImage&order=fields.id`,
+        `${apiBaseUrl}/entries?content_type=project&select=sys.id,fields.name,fields.landingImage`,
         {
           headers: {
             authorization: `Bearer ${accessToken}`,
@@ -60,7 +60,7 @@ class ProjectApi {
 
           // Create project link object
           return {
-            id: apiProject.fields.id,
+            id: apiProject.sys.id,
             name: apiProject.fields.name,
             landingImage,
           };
@@ -73,10 +73,10 @@ class ProjectApi {
     return projects$;
   }
 
-  public static get(id: number): Observable<Project | undefined> {
+  public static get(id: string): Observable<Project | undefined> {
     // Fetch project data from CMS
     const project$ = from(
-      fetch(`${apiBaseUrl}/entries?content_type=project&fields.id=${id}`, {
+      fetch(`${apiBaseUrl}/entries?content_type=project&sys.id=${id}`, {
         headers: {
           authorization: `Bearer ${accessToken}`,
         },
@@ -124,7 +124,7 @@ class ProjectApi {
 
         // Generate project from API data
         const project: Project = {
-          id: apiProject.fields.id,
+          id: apiProject.sys.id,
           name: apiProject.fields.name,
           description: apiProject.fields.description,
           technologiesUsed: apiProject.fields.technologiesUsed,
