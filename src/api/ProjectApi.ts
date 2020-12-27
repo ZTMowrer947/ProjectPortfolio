@@ -24,7 +24,7 @@ class ProjectApi {
     // Fetch project data from CMS
     const projects$ = from(
       fetch(
-        `${apiBaseUrl}/entries?content_type=project&select=sys.id,fields.name,fields.landingImage`,
+        `${apiBaseUrl}/entries?content_type=project&select=sys.id,fields.name,fields.landingImage&order=sys.createdAt`,
         {
           headers: {
             authorization: `Bearer ${accessToken}`,
