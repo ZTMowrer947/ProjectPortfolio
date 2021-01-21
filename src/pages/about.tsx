@@ -24,7 +24,7 @@ const AboutPage: NextPage = () => {
             />
             <h1 className="display-4">Zack Mowrer</h1>
             <p className="lead text-dark">
-              The Mountain State Programming Prodidy
+              The Mountain State Programming Prodigy
             </p>
             <p>
               Having been programming seriously since late 2016, I have
